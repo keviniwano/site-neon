@@ -1,0 +1,69 @@
+@mixin flexBox($direction:column, $content:center, $align:center) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    @if $direction == row-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: horizontal;
+        -moz-box-direction: reverse;
+        -moz-box-orient: horizontal;
+    } @else if $direction == column {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-direction: normal;
+        -moz-box-orient: vertical;
+    } @else if $direction == column-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+        -moz-box-direction: reverse;
+            -moz-box-orient: vertical;
+    } @else {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -moz-box-direction: normal;
+        -moz-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+
+    @if $content == flex-start {
+        -webkit-box-pack: start;
+            -moz-box-pack: start;
+            -ms-flex-pack: start;
+        } @else if $content == flex-end {
+        -webkit-box-pack: end;
+            -moz-box-pack: end;
+            -ms-flex-pack: end;
+        } @else if $content == space-between {
+        -webkit-box-pack: justify;
+            -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+        } @else if $content == space-around {
+            -ms-flex-pack: distribute;
+        } @else {
+        -webkit-box-pack: $content;
+            -moz-box-pack: $content;
+            -ms-flex-pack: $content;
+        }
+        -webkit-justify-content: $content;
+        justify-content: $content;
+    
+        @if $align == flex-start {
+            -webkit-box-align: start;
+                -moz-box-align: start;
+                -ms-flex-align: start;
+            -webkit-box-align: end;
+                -moz-box-align: end;
+                -ms-flex-align: end;
+            } @else {
+            -webkit-box-align: $align;
+                -moz-box-align: $align;
+                -ms-flex-align: $align;
+            }
+            -webkit-align-items: $align;
+            align-items: $align;  
+}
