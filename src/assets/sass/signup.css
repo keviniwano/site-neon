@@ -40,7 +40,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 102.5%;
+  width: 100%;
 }
 #SignUp .content form .first-input-control input, #SignIn .content form .first-input-control input {
   width: 46.3%;

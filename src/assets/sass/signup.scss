@@ -32,7 +32,7 @@
 
             .first-input-control{
                 @include flexBox(row, space-between, center );
-                width: 102.5%;
+                width: 100%;
 
                 input{
                     width: 46.3%
