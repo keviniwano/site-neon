@@ -73,7 +73,7 @@ export default function SignUp(){
         <div id="SignUp">
             <div className="content">
                 <img src={logo} className="logo" alt="logo"/>
-                <form onSubmit={ handleSubmit } className='form-signup'>
+                <form onSubmit={handleSubmit} className='form-signup'>
                     <h1>Olá, qual é o seu nome?</h1>
                     <h3>Vamos começar com algumas informações basicas.</h3>
                     <span className='first-input-control'>
@@ -92,7 +92,6 @@ export default function SignUp(){
                     } required/>
                     <Button
                         text={loadingAuth ? <div className="loader"></div> : 'Cadastrar'}
-                        onClick={()=>{handleSubmit()}}
                         buttonDisabled={buttonControl}
                         buttonType='submit'
                     />

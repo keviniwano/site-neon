@@ -60,6 +60,7 @@ export default function AuthProvider({ children , ...rest }){
             await setDoc(doc(db, 'users', uid), {
                 name: name,
                 sobrenome: sobrenome,
+                avatarUrl: null,
                 admin: false,
             })
             .then( () => {
@@ -68,6 +69,7 @@ export default function AuthProvider({ children , ...rest }){
                     name: name,
                     sobrenome: sobrenome,
                     email: value.user.email,
+                    avatarUrl: null,
                 }
 
                 setLoadingAuth(false)

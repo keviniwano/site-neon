@@ -1,5 +1,5 @@
 #Sidebar {
-  background-color: #009C52;
+  background-color: #0D4029;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -17,6 +17,7 @@
   height: 20vh;
   margin-bottom: 10%;
   background-size: cover;
+  background-image: url("../images/capa.jpg");
   background-color: #1E1E1E;
   display: flex;
   flex-direction: column;
@@ -26,6 +27,9 @@
 #Sidebar .avatar-container .avatar {
   border-radius: 100%;
   width: 110px;
+  height: 110px;
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
   margin-left: -5%;
   filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
 }
@@ -34,7 +38,7 @@
   height: 40px;
   margin-bottom: 5px;
   text-align: center;
-  color: #0D4029;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -50,10 +54,10 @@
 #Sidebar .link:hover {
   font-size: 1.7rem;
   transition: all 0.1s ease;
-  color: #1E1E1E;
+  color: #009C52;
 }
 #Sidebar .link:hover svg {
-  color: #1E1E1E !important;
+  color: #009C52 !important;
   width: 24px !important;
   height: 24px !important;
 }

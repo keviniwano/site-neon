@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FiHome, FiUser, FiSettings, FiLogOut } from 'react-icons/fi'
 
 import { AuthContext } from '../../contexts/auth'
-import avatar from '../../assets/images//logo.png'
+import avatar from '../../assets/images/avatar.jpg'
 import '../../assets/sass/header.css'
 export default function Header(){
 
@@ -29,16 +29,24 @@ export default function Header(){
             <div className='avatar-container'>
                 <img 
                 loading="lazy" 
-                src={avatar} 
+                src={user && user.avatarUrl ? user.avatarUrl : avatar} 
                 className='avatar'
                 alt='User'/>
             </div>
 
         <Link to='/' className='link'>
             <FiHome size={22} color='#fff'/>
-            Home
+            Chamados
         </Link>
-        <Link to='/signin' className='link' onClick={()=>logOut(false)}>
+        <Link to='/imoveis' className='link'>
+            <FiUser size={22} color='#fff'/>
+            Imóveis
+        </Link>
+        <Link to='/profile' className='link'>
+            <FiSettings size={22} color='#fff'/>
+            perfil
+        </Link>
+        <Link to='/' className='link' onClick={()=>logOut(false)}>
             <FiLogOut size={22} color='#fff'/>
             Sair
         </Link>

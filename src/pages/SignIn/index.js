@@ -69,11 +69,9 @@ export default function SignIn(){
                     <Link to='/forgotpassword' className='forgot-password-link'>esqueci a senha</Link>
                     <Button
                         text={loadingAuth ? <div className="loader"></div> : 'Entrar'}
-                        onClick={()=>handleLogin}
                         buttonDisabled={buttonControl}
                         buttonType='submit'
                     />
-                    <span className='sign-message-content'>Você poderá alterar seu nome no seu perfil depois</span>
                     <div className='react-link-text'> Ainda não é um membro? <Link to='/signUp' className='register-link'>Registre-se</Link> </div>
                 </form>
             </div>
