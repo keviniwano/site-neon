@@ -13,7 +13,7 @@ export default function Private({ children }) {
         } else if(!signed && (location.pathname === '/signup')){
             navigate('/signup');
         } else {
-            if (location.pathname === '/signin' || location.pathname === '/signup') {
+            if (signed && location.pathname === '/signin' || location.pathname === '/signup') {
                 navigate('/');
             }
         }

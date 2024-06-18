@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, createContext } from "react";
 import { auth, db } from '../services/firebaseConnection';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';;
@@ -12,6 +12,7 @@ export default function AuthProvider({ children , ...rest }){
     const [user, setUser] = useState(null)
     const [loadingAuth, setLoadingAuth] = useState(false)
     const [loading, setLoading] = useState(true); // new state to handle the initial loading
+    const [emailauth, setEmailauth] = useState('')
 
     async function signIn(email, password){
         setLoadingAuth(true)
@@ -96,6 +97,20 @@ export default function AuthProvider({ children , ...rest }){
         })
     }
 
+    async function EsqueciSenha (email) {
+        setLoadingAuth(true)
+        await sendPasswordResetEmail(auth, email)
+        .then( () => {
+            toast.success('Link de recuperação enviado!')
+            navigate('/signin')
+        })
+        .catch((error)=>{
+            toast.error('Um erro ocorreu, tente novamente')
+            console.log(error.code)
+        })
+        setLoadingAuth(false)
+    }
+
     const logOut = useCallback(async (experied) => {
         await signOut(auth)
         .then(()=>{
@@ -153,7 +168,10 @@ export default function AuthProvider({ children , ...rest }){
             signUp,
             loadingAuth,
             setLoadingAuth,
-            logOut
+            logOut,
+            emailauth,
+            setEmailauth,
+            EsqueciSenha
         }}
         >   
             {!loading && children}

@@ -104,4 +104,12 @@
 
 #SignIn input {
   width: 100% !important;
+}
+#SignIn .forgot-password-link {
+  color: rgb(131, 131, 131) !important;
+  font-size: 1.5rem !important;
+  margin-left: -73.4%;
+}
+#SignIn .forgot-password-link:hover {
+  color: #009C52 !important;
 }/*# sourceMappingURL=signup.css.map */

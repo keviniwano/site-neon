@@ -10,7 +10,7 @@ export default function SignIn(){
     const [password, setPassword] = useState('');
     const [buttonControl, setButtonControl] = useState(true);
 
-    const { signIn, loadingAuth, setLoadingAuth } = useContext(AuthContext);
+    const { signIn, loadingAuth, setLoadingAuth, setEmailauth } = useContext(AuthContext);
 
     async function handleLogin(e){
         e.preventDefault();
@@ -58,11 +58,15 @@ export default function SignIn(){
                     <h1>Bem-vindo de volta!</h1>
                     <h3>Sentimos saudade</h3>
                     <input type="email" placeholder="Email" id='email' onChange={
-                        (e)=>{ setEmail(e.target.value)}
+                        (e)=>{
+                            setEmail(e.target.value)
+                            setEmailauth(e.target.value)
+                        }
                     } required/>
                     <input type="password" placeholder="Senha" id='password' onChange={
                         (e)=>{ setPassword(e.target.value)}
                     } required/>
+                    <Link to='/forgotpassword' className='forgot-password-link'>esqueci a senha</Link>
                     <Button
                         text={loadingAuth ? <div className="loader"></div> : 'Entrar'}
                         onClick={()=>handleLogin}
