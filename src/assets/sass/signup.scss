@@ -81,13 +81,13 @@
             }
 
             .sign-message-content{
-                color: rgb(131, 131, 131);
+                color: $text-color;
                 margin: 10px 0 10px 0;
                 font-size: 1.4rem;
             }
 
             .react-link-text{
-                color: rgb(131, 131, 131);
+                color: $text-color;
                 font-size: 1.5rem;
                 margin: 10px 0 10px 0;
             }
@@ -104,5 +104,15 @@
 #SignIn{
     input{
         width: 100% !important;
+    }
+
+    .forgot-password-link{
+        color: $text-color !important;
+        font-size: 1.5rem !important; 
+        margin-left: -73.4%;
+
+        &:hover{
+            color: $primary-color !important;
+        }
     }
 }

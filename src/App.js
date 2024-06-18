@@ -1,9 +1,13 @@
 import { BrowserRouter, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import RoutesApp from './routes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './contexts/auth.js';
+import Header from './components/Header/index.js';
 
-function App() {
+export default function App() {
+  
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -11,24 +15,25 @@ function App() {
       </AuthProvider>
     </BrowserRouter>
   );
-
-  function AppContent() {
-    const location = useLocation();
-    const [showHeader, setShowHeader] = useState(false);
-
-    useEffect(() => {
-      if(location.pathname === '/' || location.pathname === '/signin' || location.pathname === '/signup') {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-    }, [location]);
-    return (
-      <>
-        <RoutesApp/>
-      </>
-    );
-  }
 }
 
-export default App;
+function AppContent(){
+  const location = useLocation()
+  const [showHeader, setShowHeader] = useState()
+
+  useEffect(()=>{
+    if(location.pathname === '/signin' || location.pathname === '/signup'){
+      setShowHeader(false)
+    }else{
+      setShowHeader(true)
+    }
+  }, [location])
+
+  return(
+    <>
+      {showHeader && <Header />}
+      <ToastContainer autoClose={2500} />
+      <RoutesApp />
+    </>
+  )
+}

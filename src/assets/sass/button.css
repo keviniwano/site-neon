@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-button {
+.genericbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   line-height: 50px;
   text-align: center;
   outline: none;
@@ -15,11 +19,11 @@ button {
   color: aliceblue;
   transition: all 0.2s ease-in-out;
 }
-button:hover {
+.genericbutton:hover {
   background-color: #009C52;
   color: rgb(192, 192, 192);
 }
-button:disabled {
+.genericbutton:disabled {
   color: rgba(51, 51, 51, 0.4);
   background-color: rgb(234, 243, 236);
   cursor: not-allowed;
