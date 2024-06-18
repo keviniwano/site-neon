@@ -1,21 +1,17 @@
 import React from 'react';
 import '../../assets/sass/button.css'
-import PropTypes from 'prop-types';
 
-const Button = ({ text, onClick, buttonDisabled }) => {
+const Button = ({ text, onClick, buttonDisabled, buttonType }) => {
     return (
         <button 
+        type={buttonType}
         onClick={onClick}
-        disabled={buttonDisabled}>
+        disabled={buttonDisabled}
+        className='genericbutton'
+        >
         {text}
         </button>
     );
-};
-
-Button.propTypes = {
-    text: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-    buttonDisabled: PropTypes.bool.isRequired,
 };
 
 export default Button;
