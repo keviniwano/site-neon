@@ -21,7 +21,7 @@
             height: 45vh;
             color: rgb(255, 255, 255);
             padding: 30px;
-            backdrop-filter: brightness(50%); 
+            backdrop-filter: brightness(35%); 
             font-weight: 500;
 
             .tittle{
@@ -68,4 +68,67 @@
             }
         }
     } 
+
+    .content-cards{
+        @include flexBox(column, space-evenly, flex-start);
+        width: 100%;
+        min-height: 60vh;
+
+        .content-message{
+            @include flexBox(column, space-evenly, flex-start);
+            width: 100%;
+            padding: 30px 80px 0 80px;
+        }
+
+        h1{
+            font-weight: 500;
+        }
+
+        h2{
+            font-weight: 400;
+        }
+        
+
+        h1:nth-child(1){
+            margin-bottom: 30px;
+        }
+
+        span{
+            max-width: 60%;
+            margin-top: 30px;
+        }
+
+        h1:nth-child(4){
+            margin-top: 50px
+        }
+
+        .cards{
+            @include flexBox(column, flex-start, flex-start);
+            width: 100%;
+            padding-left: 80px;
+            padding-top: 60px;
+            background-color: $third-color;
+            color: rgb(255, 255, 255);
+            height: 420px;
+            margin-top: 50px;
+
+            .container{
+                @include flexBox(row, space-evenly, center);
+                width: 100%;
+                height: 400px;
+                padding-right: 5%;
+
+                .card{
+                    @include flexBox(column, flex-start, flex-start);
+                    width: 100%;
+    
+                    *{
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+        }
+
+    }
 }

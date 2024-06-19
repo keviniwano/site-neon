@@ -10,6 +10,7 @@
     padding: 0 5%;
     box-shadow: 0 -7px 20px $text-color;
     background-color: $third-color;
+    z-index: 10;
 
     img{
         width: 30px;
@@ -18,8 +19,53 @@
     }
 
     .avatar-link{
-        object-fit: cover;
-        clip-path: circle(50%);
+        img{
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            clip-path: circle(48%);
+            margin-bottom: -5px;
+        }
+
+        .button-container{
+            width: 140%;
+            @include flexBox(row, space-evenly, center);
+
+            Button{
+                @include flexBox(row, center, center);
+                height: 4.5vh;
+                width: 100px;
+                margin-top: -1px;
+                background-color: $primary-color;
+    
+                &:hover{  
+                    font-size: 1.78rem; 
+                    color: #fff;
+                }
+            }
+
+            Button:nth-child(1){
+                background-color: transparent;
+
+                svg{
+                    position: relative;
+                    bottom: -8px;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover{  
+                    font-size: 1.78rem; 
+                    color: $primary-color;
+
+                    svg{
+                        color: $primary-color !important;
+                        left: 3px;
+                    }
+                }
+            }
+
+        }
+
     }
 
     ul{
@@ -36,8 +82,8 @@
             transition: all 0.2s ease-in-out;
 
             &:hover{
-                color: $primary-color;
-                font-size: 1.72rem;
+                color: $primary-color;  
+                font-size: 1.72rem; 
             }
         }
     }

@@ -14,7 +14,7 @@ export default function Error(){
                 text={'Back home'}
                 onClick={
                     ()=>{
-                        navigate('/home')
+                        navigate('/')
                     }
                 }
             />

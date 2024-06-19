@@ -8,9 +8,9 @@ export default function Private({ children }) {
     const location = useLocation();
 
     useEffect(() => {
-        if (!signed && (location.pathname === '/signin')) {
+        if (location.pathname === '/signin') {
             navigate('/signin');
-        } else if(!signed && (location.pathname === '/signup')){
+        } else if(location.pathname === '/signup'){
             navigate('/signup');
         } else {
             if (location.pathname === '/signin' || location.pathname === '/signup') {
