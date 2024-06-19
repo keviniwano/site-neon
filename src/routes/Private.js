@@ -8,13 +8,13 @@ export default function Private({ children }) {
     const location = useLocation();
 
     useEffect(() => {
-        if (!signed && (location.pathname === '/signin' || location.pathname === '/')) {
-            navigate('/');
+        if (!signed && (location.pathname === '/signin')) {
+            navigate('/signin');
         } else if(!signed && (location.pathname === '/signup')){
             navigate('/signup');
         } else {
-            if (signed && (location.pathname === '/' || location.pathname === '/signin' || location.pathname === '/signup')) {
-                navigate('/home');
+            if (location.pathname === '/signin' || location.pathname === '/signup') {
+                navigate('/');
             }
         }
     }, [signed, navigate, location.pathname]);

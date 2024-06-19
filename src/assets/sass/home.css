@@ -1,0 +1,67 @@
+#Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 6vh;
+}
+#Home .banner {
+  width: 100%;
+  height: 45vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #1E1E1E;
+  background-position: center center;
+  background-image: url("../images/banner.jpg");
+}
+#Home .banner .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  color: rgb(255, 255, 255);
+  padding: 30px;
+  -webkit-backdrop-filter: brightness(50%);
+          backdrop-filter: brightness(50%);
+  font-weight: 500;
+}
+#Home .banner .content .tittle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  width: 50%;
+}
+#Home .banner .content img {
+  width: 20%;
+}
+#Home .banner .content h1 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+#Home .banner .content span {
+  font-size: 2rem;
+}
+#Home .banner .content .subtittle {
+  width: 300px;
+}
+#Home .banner .content .message {
+  font-size: 1.6rem;
+}
+#Home .banner .content .genericbutton {
+  background-color: #009C52;
+  width: 300px;
+}
+#Home .banner .content .genericbutton:hover {
+  background-color: #0D4029;
+  color: rgb(192, 192, 192);
+}
+#Home .banner .content .genericbutton:disabled {
+  color: rgba(51, 51, 51, 0.4);
+  background-color: rgb(234, 243, 236);
+  cursor: not-allowed;
+}/*# sourceMappingURL=home.css.map */

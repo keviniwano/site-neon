@@ -1,6 +1,6 @@
 import React, { useState ,useEffect ,useContext } from 'react';
 import { Link } from 'react-router-dom'
-import { FiHome, FiUser, FiSettings, FiLogOut } from 'react-icons/fi'
+import logo from  '../../assets/images/logo.png';
 
 import { AuthContext } from '../../contexts/auth'
 import avatar from '../../assets/images/avatar.jpg'
@@ -10,47 +10,47 @@ export default function Header(){
     const { user, logOut } = useContext(AuthContext)
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        if (user !== null && user !== undefined) {
-            setIsLoading(false);
-        }
-    }, [user]);
-
-    if (isLoading) {
-        return (
-            <div className='loader-container'>
-                <div className="loader2"></div>
-            </div>
-        )
-    }
-
     return(
-        <nav id='Sidebar'>
-            <div className='avatar-container'>
-                <img 
-                loading="lazy" 
-                src={user && user.avatarUrl ? user.avatarUrl : avatar} 
-                className='avatar'
-                alt='User'/>
-            </div>
+        <nav id='Menu'>
+            <a href='/' className='link'>
+                <img src={logo} className="logo" alt="logo"/>
+            </a>
+            <ul>
+                <li>
+                    <Link to='/' className='link'>
+                        Início
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/imoveis' className='link'>
+                        Buscar Imóveis
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/anuncio' className='link'>
+                        Anuncie seu Imóvel
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/sobre' className='link'>
+                        Sobre
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/contato' className='link'>
+                        Fale Conosco
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/' className='link' onClick={()=>logOut(false)}>
+                        Sair
+                    </Link>
+                </li>
+            </ul>
 
-        <Link to='/' className='link'>
-            <FiHome size={22} color='#fff'/>
-            Chamados
-        </Link>
-        <Link to='/imoveis' className='link'>
-            <FiUser size={22} color='#fff'/>
-            Imóveis
-        </Link>
-        <Link to='/profile' className='link'>
-            <FiSettings size={22} color='#fff'/>
-            perfil
-        </Link>
-        <Link to='/' className='link' onClick={()=>logOut(false)}>
-            <FiLogOut size={22} color='#fff'/>
-            Sair
-        </Link>
-
+            <a href='/profile' className='avatar-link'>
+                <img src={user && user.avatarUrl ? user.avatarUrl : avatar} className="avatar" alt="avatar"/>
+            </a>
         </nav>
     )
 }

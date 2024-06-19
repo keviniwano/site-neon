@@ -37,13 +37,13 @@ export default function AuthProvider({ children , ...rest }){
         }).catch( (error)=>{
             switch(error.code){
                 case 'auth/user-not-found':
-                    toast.error('User not found"')
+                        toast.error('Usuário não encontrado"')
                     break;
-                case 'auth/invalid-credential':
-                    toast.error('Invalid credentials')
+                    case 'auth/invalid-credential':
+                        toast.error('Email ou senha incorretos')
                     break;
                 default:
-                    toast.error('Ops, something went wrong, try again later!')
+                    toast.error('Ops, Alguma coisa deu errado, tente novamente mais tarde! :(')
                     break;
                 }
             setLoadingAuth(false)
@@ -107,7 +107,7 @@ export default function AuthProvider({ children , ...rest }){
             navigate('/signin')
         })
         .catch((error)=>{
-            toast.error('Um erro ocorreu, tente novamente')
+            toast.error('Ops, Alguma coisa deu errado, tente novamente mais tarde! :(')
             console.log(error.code)
         })
         setLoadingAuth(false)
@@ -118,7 +118,7 @@ export default function AuthProvider({ children , ...rest }){
         .then(()=>{
             localStorage.removeItem('@neoninfoPRO')
             setUser(null)
-            !experied ? toast.error('You have been logged out') : toast.info('Session expired')
+            !experied ? toast.error('Você foi desconectado') : toast.info('Sessão expirada')
             navigate('/signin')
             return true
         })
@@ -130,6 +130,7 @@ export default function AuthProvider({ children , ...rest }){
 
     useEffect(() => {
         async function loadStorageData(){
+            setLoading(true);
             const storageUser = localStorage.getItem('@neoninfoPRO');
             if (storageUser) {
                 const parsedUser = JSON.parse(storageUser);

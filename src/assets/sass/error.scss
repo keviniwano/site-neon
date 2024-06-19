@@ -1,0 +1,22 @@
+@import '_mixin.scss';
+@import '_colors.scss';
+
+#Error{
+    @include flexBox(column, center, center);
+    height: 100vh;
+    color: $third-color;
+
+    h1{
+        font-size: 240px;
+        text-shadow: 3px 0px 0px $primary-color;
+    }
+
+    h2{
+        font-size: 34px;
+        margin: 70px 0;
+    }
+
+    Button{
+        width: 300px;
+    }
+}  

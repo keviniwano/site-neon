@@ -1,171 +1,44 @@
 @import '_mixin.scss';
 @import '_colors.scss';
 
-#Sidebar{
-    background-color: $second-color;
-    margin: 0;
-    padding: 0;
+#Menu{
+    @include flexBox(row, space-evenly, center);
+    width: 100%;
+    height: 6vh;
     position: fixed;
-    height: 100vh;
-    width: 18%;
-    overflow: hidden;
-    font-size: 1.6rem;
-    @include flexBox(column, flex-start, flex-start);
+    top: 0;
+    padding: 0 5%;
+    box-shadow: 0 -7px 20px $text-color;
+    background-color: $third-color;
 
-    .avatar-container{
-        width: 100%;
-        height: 20vh;
-        margin-bottom: 10%;
-        background-size: cover;
-        background-image: url('../images/capa.png');
-        background-color: $third-color;
-        @include flexBox(column, center, center);
-
-        .avatar{
-            border-radius: 100%;
-            width: 110px;
-            height: 110px;
-            clip-path: circle(50%);
-            margin-left: -5%;
-            -webkit-filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
-                    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
-        }
+    img{
+        width: 30px;
+        height: 30px;
+        backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
     }
 
-    .link{
-        width: 100%;
-        height: 40px;
-        margin-bottom: 5px;
-        text-align: center;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-        @include flexBox(row, flex-start, center);
-
-        svg{
-            margin: 0 10px;
-            margin-top: -2px;
-            -webkit-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all 0.1s ease;
-        }
-
-        &:hover{
-            font-size: 1.7rem;
-            -webkit-transition: all 0.1s ease;
-            -o-transition: all 0.1s ease;
-            transition: all 0.1s ease;
-            color: $primary-color;
-        }
-
-        &:hover svg{
-            color: $primary-color !important;
-            width: 24px !important;
-            height: 24px !important;
-        }
+    .avatar-link{
+        object-fit: cover;
+        clip-path: circle(50%);
     }
 
-
-    .loader-container{
+    ul{
+        @include flexBox(row, space-evenly, center);
         width: 100%;
-        height: 100vh;
-        @include flexBox(column, center, center);
 
-        .loader2 {
-            margin-left: 10%;
-            width: 150px;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            color: #000;
-            border: 2px solid;
-            -webkit-box-sizing: border-box;
-                    box-sizing: border-box;
-            position: relative;
-            -webkit-transform-origin: left;
-                -ms-transform-origin: left;
-                    transform-origin: left;
-            -webkit-animation: l2 1s infinite linear;
-                    animation: l2 1s infinite linear;
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                inset: 0 0 auto;
-                margin: auto;
-                width: 50%;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                border: 2px solid;
-                -webkit-box-sizing: content-box;
-                        box-sizing: content-box;
-                -webkit-transform-origin: 50% calc(100% - 4px);
-                    -ms-transform-origin: 50% calc(100% - 4px);
-                        transform-origin: 50% calc(100% - 4px);
-                -webkit-animation: inherit;
-                        animation: inherit;
+        li{
+            @include flexBox(row, center, center);
+            width: 18%;
+        }
+
+        a{
+            color: #fff;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+                color: $primary-color;
+                font-size: 1.72rem;
             }
-            &::after {
-                inset:auto 0 calc(100% + 2px);
-                -webkit-animation-duration: 0.5s;
-                        animation-duration: 0.5s;
-                animation-direction: reverse;
-                -webkit-transform-origin: 50% calc(200% - 2px);
-                    -ms-transform-origin: 50% calc(200% - 2px);
-                        transform-origin: 50% calc(200% - 2px);
-            }
-        }
-    }
-    @-webkit-keyframes l2{
-        100% {-webkit-transform:rotate(1turn);transform:rotate(1turn)}
-    }
-    @keyframes l2{
-        100% {-webkit-transform:rotate(1turn);transform:rotate(1turn)}
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #Sidebar{
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        position: relative;
-        @include flexBox(row, space-around, flex-start);
-
-        .link{
-            margin-bottom: 0;
-            width: auto;
-            margin: 0 15px;
-
-            
-
-            svg{
-                display: none !important;
-            }
-        }
-
-        .avatar-container{
-            display: none;
-        }
-    }
-}
-
-@media screen and (max-width: 468px) {
-    #Sidebar{
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        position: relative;
-        @include flexBox(column, flex-start, flex-start);
-
-        .link{
-            margin: 0 0;
-            margin-bottom: 5px;
-            width: 100%;
-            padding-left: 5px;
-        }
-
-        .avatar-container{
-            display: none;
         }
     }
 }

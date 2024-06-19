@@ -1,0 +1,71 @@
+@import '_mixin.scss';
+@import '_colors.scss';
+
+#Home{
+    @include flexBox(column, space-evenly, flex-start);
+    width: 100%;
+    padding-top: 6vh;
+
+    .banner{
+        width: 100%;
+        height: 45vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: $third-color;
+        background-position: center center;
+        background-image: url('../images/banner.jpg');
+        
+        .content{
+            @include flexBox(row, space-evenly, center);
+            width: 100%;
+            height: 45vh;
+            color: rgb(255, 255, 255);
+            padding: 30px;
+            backdrop-filter: brightness(50%); 
+            font-weight: 500;
+
+            .tittle{
+                @include flexBox(column, space-evenly, flex-start);
+                height: 100%;
+                width: 50%;
+            }
+
+            img{
+                width: 20%;
+            }
+
+            h1{
+                font-size: 4rem;
+                font-weight: 400;
+            }
+
+            span{
+                font-size: 2rem;
+            }
+
+            .subtittle{
+                width: 300px;
+            }
+
+            .message{
+                font-size: 1.6rem;
+            }
+
+            .genericbutton{
+                background-color: $primary-color;
+                width: 300px;
+            
+                &:hover{
+                    background-color: $second-color;
+                    color: rgb(192, 192, 192);
+                }
+            
+                &:disabled{
+                    color: rgba(51, 51, 51, 0.4);
+                    background-color: rgb(234, 243, 236);
+                    cursor: not-allowed;
+                }
+            }
+        }
+    } 
+}
