@@ -71,7 +71,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
-  min-height: 60vh;
+  min-height: 40vh;
 }
 #Home .content-cards .content-message {
   display: flex;
@@ -94,9 +94,6 @@
   max-width: 60%;
   margin-top: 30px;
 }
-#Home .content-cards h1:nth-child(4) {
-  margin-top: 50px;
-}
 #Home .content-cards .cards {
   display: flex;
   flex-direction: column;
@@ -104,11 +101,10 @@
   align-items: flex-start;
   width: 100%;
   padding-left: 80px;
-  padding-top: 60px;
+  padding-top: 30px;
   background-color: #1E1E1E;
   color: rgb(255, 255, 255);
-  height: 420px;
-  margin-top: 50px;
+  height: 100%;
 }
 #Home .content-cards .cards .container {
   display: flex;
@@ -116,7 +112,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 400px;
+  height: 100%;
   padding-right: 5%;
 }
 #Home .content-cards .cards .container .card {
@@ -128,4 +124,126 @@
 }
 #Home .content-cards .cards .container .card * {
   margin: 10px 0;
+}
+#Home .message-container {
+  padding-bottom: 37px;
+}
+#Home .card-container {
+  height: 45vh !important;
+}
+#Home .divisor {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(12, 20, 12);
+  color: #fff;
+  padding-left: 80px;
+}
+#Home #Trabalhos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/casa-1.jpg") #1E1E1E;
+  background-size: cover !important;
+  flex-wrap: nowrap;
+  transition: all 0.2s ease-in-out !important;
+}
+#Home #Trabalhos .image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#Home #Trabalhos .work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0 -1px;
+  width: 34%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid #dadada;
+  border-collapse: collapse;
+  transition: all 0.3s ease;
+  border-right: 0px;
+  -webkit-backdrop-filter: brightness(0.28);
+          backdrop-filter: brightness(0.28);
+}
+#Home #Trabalhos .work div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 430px;
+  height: 100%;
+  color: #fff;
+  font-weight: 300;
+}
+#Home #Trabalhos .work span {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: none;
+}
+#Home #Trabalhos .work span Button {
+  background-color: #009C52;
+  width: 300px;
+  margin-top: 10%;
+}
+#Home #Trabalhos .work span Button:hover {
+  background-color: #009C52;
+  font-size: 1.77rem;
+  color: #fff;
+}
+#Home #Trabalhos .work:hover {
+  width: 40%;
+}
+#Home #Trabalhos .image-container:nth-child(2) .work {
+  border-top: none;
+}
+#Home #Trabalhos .badInput {
+  border: 1px solid red !important;
+}
+#Home #Trabalhos.b1 {
+  background: url("../images/casa-1.jpg") #1E1E1E !important;
+}
+#Home #Trabalhos.b2 {
+  background: url("../images/casa-2.jpg") #1E1E1E !important;
+}
+#Home #Trabalhos.b3 {
+  background: url("../images/casa-3.jpg") #1E1E1E !important;
+}
+#Home #Trabalhos.b4 {
+  background: url("../images/casa-4.jpg") #1E1E1E !important;
+}
+#Home #Trabalhos.b5 {
+  background: url("../images/casa-5.jpg") #1E1E1E !important;
+}
+#Home #Trabalhos.b6 {
+  background: url("../images/casa-6.jpg") #1E1E1E !important;
+}
+
+@media screen and (max-width: 750px) {
+  #Trabalhos .image-container {
+    flex-direction: column;
+  }
+  #Trabalhos .work {
+    width: 100%;
+    height: 100%;
+  }
+  #Trabalhos .work:hover {
+    width: 100%;
+    height: 200%;
+  }
 }/*# sourceMappingURL=home.css.map */

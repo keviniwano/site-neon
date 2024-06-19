@@ -2,6 +2,7 @@
     position: fixed;
     bottom: 18px;
     left: 18px;
+    z-index: 9;
 
     svg{
         transition: all 0.3s ease-in-out;

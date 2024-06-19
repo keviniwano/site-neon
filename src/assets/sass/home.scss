@@ -72,7 +72,7 @@
     .content-cards{
         @include flexBox(column, space-evenly, flex-start);
         width: 100%;
-        min-height: 60vh;
+        min-height: 40vh;
 
         .content-message{
             @include flexBox(column, space-evenly, flex-start);
@@ -98,24 +98,19 @@
             margin-top: 30px;
         }
 
-        h1:nth-child(4){
-            margin-top: 50px
-        }
-
         .cards{
             @include flexBox(column, flex-start, flex-start);
             width: 100%;
             padding-left: 80px;
-            padding-top: 60px;
+            padding-top: 30px;
             background-color: $third-color;
             color: rgb(255, 255, 255);
-            height: 420px;
-            margin-top: 50px;
+            height: 100%;
 
             .container{
                 @include flexBox(row, space-evenly, center);
                 width: 100%;
-                height: 400px;
+                height: 100%;
                 padding-right: 5%;
 
                 .card{
@@ -130,5 +125,112 @@
 
         }
 
+    }
+
+    .message-container{
+        padding-bottom: 37px;
+    }
+
+    .card-container{
+        height: 45vh !important;
+    }
+
+    .divisor{
+        @include flexBox(row, flex-start, center);
+        width: 100%;
+        height: 10vh;
+        background-color: rgb(12, 20, 12);
+        color: #fff;
+        padding-left: 80px;
+    }
+
+    #Trabalhos{
+        @include flexBox(column, center, center);
+        width: 100%;
+        height: 100vh;
+        background: url("../images/casa-1.jpg") $third-color;
+        background-size: cover !important;
+        flex-wrap: nowrap;
+        transition: all 0.2s ease-in-out !important;
+
+        .image-container{
+            @include flexBox(row, center, center);
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .work{
+            @include flexBox(column, center, center);
+            margin-right: 0 -1px;
+            width: 34%;
+            height: 100%;
+            background-color: transparent;
+            border: 1px solid #dadada;
+            border-collapse: collapse;
+            transition: all 0.3s ease;
+            border-right: 0px;
+            backdrop-filter: brightness(0.28);
+
+            div{
+                @include flexBox(column, space-evenly, center);
+                width: 430px;
+                height: 100%;
+                color: #fff;
+                font-weight: 300;
+            }
+
+            span{
+                @include flexBox(column, space-evenly, center);
+                display: none;
+
+                Button{
+                    background-color: $primary-color;
+                    width: 300px;
+                    margin-top: 10%;
+                
+                    &:hover{
+                        background-color: $primary-color;
+                        font-size: 1.77rem;
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+
+        .work:hover{
+            width: 40%;
+        }
+
+        .image-container:nth-child(2) .work{
+            border-top: none;
+        }
+
+        .badInput{
+            border: 1px solid red !important;
+        }
+
+        @for $i from 1 through 6{
+            &.b#{$i}{
+                background: url("../images/casa-#{$i}.jpg") $third-color !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px){
+    #Trabalhos .image-container{
+        flex-direction: column;
+    }
+
+    #Trabalhos .work{
+        width: 100%;
+        height: 100%;
+    }
+
+    #Trabalhos .work:hover{
+        width: 100%;
+        height: 200%;
     }
 }
