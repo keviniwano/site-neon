@@ -8,7 +8,7 @@
 }
 #Home .banner {
   width: 100%;
-  height: 45vh;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #1E1E1E;
@@ -18,12 +18,13 @@
 #Home .banner .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 45vh;
+  height: 42.5vh;
   color: rgb(255, 255, 255);
   padding: 30px;
+  padding-left: 80px;
   -webkit-backdrop-filter: brightness(50%);
           backdrop-filter: brightness(50%);
   font-weight: 500;
@@ -34,10 +35,11 @@
   justify-content: space-evenly;
   align-items: flex-start;
   height: 100%;
-  width: 50%;
+  width: 55%;
 }
 #Home .banner .content img {
   width: 20%;
+  margin-left: 20%;
 }
 #Home .banner .content h1 {
   font-size: 4rem;
@@ -51,6 +53,7 @@
 }
 #Home .banner .content .message {
   font-size: 1.6rem;
+  margin-bottom: 50px;
 }
 #Home .banner .content .genericbutton {
   background-color: #009C52;
@@ -71,7 +74,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
-  min-height: 40vh;
+  height: 100%;
 }
 #Home .content-cards .content-message {
   display: flex;
@@ -79,8 +82,9 @@
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
-  height: 50vh;
-  padding: 30px 80px 0 80px;
+  height: 35vh;
+  padding: 0px 80px 0 80px;
+  color: #fff;
 }
 #Home .content-cards h1 {
   font-weight: 500;
@@ -88,11 +92,8 @@
 #Home .content-cards h2 {
   font-weight: 400;
 }
-#Home .content-cards h1:nth-child(1) {
-  margin-bottom: 30px;
-}
 #Home .content-cards span {
-  max-width: 60%;
+  max-width: 100%;
   margin-top: 30px;
 }
 #Home .content-cards .cards {
@@ -128,6 +129,9 @@
 }
 #Home .message-container {
   padding-bottom: 37px;
+  -webkit-backdrop-filter: brightness(50%);
+          backdrop-filter: brightness(50%);
+  height: 47.5vh;
 }
 #Home .divisor {
   display: flex;
@@ -244,7 +248,7 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
-#Home #Contact {
+#Home #contato {
   display: flex;
   flex-direction: column;
   justify-content: flex-start flex-start;
@@ -258,7 +262,7 @@
   /*title contact*/
   /*form*/
 }
-#Home #Contact div:nth-child(1) {
+#Home #contato div:nth-child(1) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -270,19 +274,19 @@
   padding: 0 3%;
   color: #fff !important;
 }
-#Home #Contact div h3 {
+#Home #contato div h3 {
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 5vh;
   font-size: 2rem;
 }
-#Home #Contact div h2 {
+#Home #contato div h2 {
   margin-right: 0.468%;
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 2px;
 }
-#Home #Contact #formulario {
+#Home #contato #formulario {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -294,7 +298,7 @@
   z-index: 2;
   margin-bottom: 30px;
 }
-#Home #Contact form {
+#Home #contato form {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -303,27 +307,27 @@
   height: 100%;
   flex-wrap: wrap;
 }
-#Home #Contact .input-section {
+#Home #contato .input-section {
   width: 50%;
 }
-#Home #Contact .input-section-right {
+#Home #contato .input-section-right {
   display: flex;
   flex-direction: column;
   justify-content: flex-start flex-start;
   align-items: center;
 }
-#Home #Contact .input-section-right label {
+#Home #contato .input-section-right label {
   margin-left: 10%;
   align-self: flex-start;
 }
-#Home #Contact .input-section label {
+#Home #contato .input-section label {
   display: block;
   font-size: 1.5rem;
   padding-bottom: 1.3%;
   font-weight: 600;
   color: #000 !important;
 }
-#Home #Contact input {
+#Home #contato input {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,16 +341,16 @@
   border-radius: 15px;
   border: 1px solid rgb(113, 113, 113);
 }
-#Home #Contact input:focus {
+#Home #contato input:focus {
   outline: 1px solid #009C52;
 }
-#Home #Contact input::-moz-placeholder {
+#Home #contato input::-moz-placeholder {
   font-size: 1.5rem;
 }
-#Home #Contact input::placeholder {
+#Home #contato input::placeholder {
   font-size: 1.5rem;
 }
-#Home #Contact .input-section-message {
+#Home #contato .input-section-message {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -354,15 +358,15 @@
   width: 100%;
   height: 20vh;
 }
-#Home #Contact .input-section-message textarea {
+#Home #contato .input-section-message textarea {
   width: 95% !important;
   height: 100%;
   margin-bottom: 30px;
 }
-#Home #Contact Button {
+#Home #contato Button {
   width: 95.4%;
 }
-#Home #Contact #message {
+#Home #contato #message {
   width: 100.2%;
   height: 100%;
   padding: 0.5%;
@@ -375,7 +379,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   background-color: #1E1E1E;
   color: #fff;
   padding: 80px;
@@ -437,10 +441,10 @@
   }
 }
 @media screen and (max-width: 1025px) {
-  #Contact section h3 {
+  #contato section h3 {
     font-size: 2rem;
   }
-  #Contact section h2 {
+  #contato section h2 {
     letter-spacing: 2px;
   }
 }
@@ -467,7 +471,7 @@
   }
 }
 @media screen and (max-width: 671px) {
-  #Contact button {
+  #contato button {
     width: 55%;
   }
 }/*# sourceMappingURL=home.css.map */

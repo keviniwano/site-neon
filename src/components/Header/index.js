@@ -40,9 +40,9 @@ export default function Header(){
                     </a>
                 </li>
                 <li>
-                    <Link to='/contato' className='link'>
+                    <a href='/#contato' className='link'>
                         Fale Conosco
-                    </Link>
+                    </a>
                 </li>
 
                 {

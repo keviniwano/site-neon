@@ -137,6 +137,7 @@ export default function AuthProvider({ children , ...rest }){
         })
         .catch((error)=>{
             toast.error('Something went wrong, try again later')
+
             setLoadingAuth(false)
         })
     }

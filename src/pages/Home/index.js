@@ -134,10 +134,9 @@ export default function Home(){
         <div id="Home">
             <div className='banner'>
                 <div className='content'>
-                    <img src={logo} className="logo" alt="logo"/>
                     <span className='tittle'>
-                        <h1>Unindo tradição à inovação!</h1>
-                        <span className='subtittle'>Transformando sonhos em lares!</span>
+                        <h1>Neon Imobiliária - Transformando sonhos em lares!</h1>
+                        <span className='subtittle'><br/></span>
 
                         <div className='message'>
                             Transformando sonhos em realidade com imóveis de alta qualidade e atendimento personalizado. A Neon se dedica a encontrar o lar perfeito para você, com foco em conforto, segurança e modernidade.
@@ -151,21 +150,22 @@ export default function Home(){
                             }
                         />
                     </span>
+                    <img src={logo} className="logo" alt="logo"/>
                 </div>
-            </div>
-
-            <div id='sobre' className='content-cards message-container'>
+                <div id='sobre' className='content-cards message-container'>
 
                     <div className='content-message'>
                         <h1>Quem somos?</h1>
                         <span>
-                            Na Neon, entendemos que encontrar o imóvel perfeito é mais do que uma simples compra — é a realização de um sonho. Sabemos que cada pessoa tem um desejo único e especial quando se trata de seu lar, e por isso, estamos comprometidos em proporcionar a melhor experiência imobiliária possível, desde o primeiro contato até a entrega das chaves e além.
+                            Na Neon Imobiliária, entendemos que encontrar o imóvel perfeito é mais do que uma simples compra — é a realização de um sonho que pode transformar vidas. Sabemos que cada pessoa tem um desejo único e especial quando se trata de seu lar, e é por isso que estamos comprometidos em proporcionar a melhor experiência imobiliária possível. Desde o primeiro contato até a entrega das chaves e além, nossa equipe se dedica a cada detalhe para garantir sua satisfação total. Nosso objetivo é fazer com que o processo de compra, venda ou aluguel de imóveis seja o mais tranquilo, transparente e satisfatório possível. Acreditamos que cada cliente merece um atendimento excepcional, personalizado e dedicado. Por isso, investimos em treinamento contínuo para nossos corretores e consultores, garantindo que estejam sempre prontos para oferecer as melhores soluções e orientações, baseadas nas necessidades individuais de cada cliente.
                         </span>
                         <span>
                             Nosso objetivo é fazer com que o processo de compra, venda ou aluguel de imóveis seja o mais tranquilo, transparente e satisfatório possível. Acreditamos que cada cliente merece um atendimento excepcional, personalizado e dedicado, pois sabemos que um imóvel não é apenas um lugar para morar, mas um refúgio, um espaço onde se constroem memórias e se vive plenamente.
                         </span>
                     </div>
+                </div>
             </div>
+
 
             <div className='divisor'><h1>Destaques</h1></div>
 
@@ -298,11 +298,11 @@ export default function Home(){
                     </div>
             </div>
             
-            <div id='Contact'>
+            <div id='contato'>
                 
                 <div className='tittle-contact'>
                     <h3>Tem dúvidas ou algum problema?</h3>
-                    <h2>Fale conosco</h2>
+                    <h2>Mande uma Mensagem</h2>
                 </div>
 
                 <div id="formulario">

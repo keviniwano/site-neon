@@ -8,7 +8,7 @@
 
     .banner{
         width: 100%;
-        height: 45vh;
+        height: 90vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-color: $third-color;
@@ -16,22 +16,26 @@
         background-image: url('../images/banner.jpg');
         
         .content{
-            @include flexBox(row, space-evenly, center);
+            @include flexBox(row, flex-start, center);
             width: 100%;
-            height: 45vh;
+            height: 42.5vh;
             color: rgb(255, 255, 255);
             padding: 30px;
+            padding-left: 80px;
             backdrop-filter: brightness(50%); 
             font-weight: 500;
+            
 
             .tittle{
                 @include flexBox(column, space-evenly, flex-start);
                 height: 100%;
-                width: 50%;
+                width: 55%;
+                
             }
 
             img{
                 width: 20%;
+                margin-left: 20%;
             }
 
             h1{
@@ -49,6 +53,7 @@
 
             .message{
                 font-size: 1.6rem;
+                margin-bottom: 50px;
             }
 
             .genericbutton{
@@ -67,18 +72,19 @@
                 }
             }
         }
-    } 
+    }
 
     .content-cards{
         @include flexBox(column, space-evenly, flex-start);
         width: 100%;
-        min-height: 40vh;
+        height: 100%;
 
         .content-message{
             @include flexBox(column, space-evenly, flex-start);
             width: 100%;
-            height: 50vh;
-            padding: 30px 80px 0 80px;
+            height: 35vh;
+            padding: 0px 80px 0 80px;
+            color: #fff;
         }
 
         h1{
@@ -90,12 +96,8 @@
         }
         
 
-        h1:nth-child(1){
-            margin-bottom: 30px;
-        }
-
         span{
-            max-width: 60%;
+            max-width: 100%;
             margin-top: 30px;
         }
 
@@ -130,6 +132,9 @@
 
     .message-container{
         padding-bottom: 37px;
+        backdrop-filter: brightness(50%); 
+        height: 47.5vh;
+
     }
 
     .divisor{
@@ -218,7 +223,7 @@
         }
     }
 
-    #Contact{
+    #contato{
         @include flexBox(column, flex-start flex-start);
         margin-top: 1px;
         width: 100% !important;
@@ -343,7 +348,7 @@
     #Rodape{
         @include flexBox(column, space-between, center);
         width: 100%;
-        height: 50vh;
+        height: 40vh;
         background-color: $third-color;
         color: #fff;
         padding: 80px;
@@ -407,11 +412,11 @@
 
 @media screen and (max-width: 1025px) {
         
-    #Contact section h3{
+    #contato section h3{
         font-size: 2rem;
     }
     
-    #Contact section h2{
+    #contato section h2{
         letter-spacing: 2px;
     }
 }
@@ -445,7 +450,7 @@
 }
 
 @media screen and (max-width: 671px) {
-    #Contact button{
+    #contato button{
         width: 55%;
     }
 }
