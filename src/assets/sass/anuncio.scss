@@ -1,0 +1,170 @@
+@import '_mixin.scss';
+@import '_colors.scss';
+
+#Anuncio{
+    @include flexBox(row, space-evenly, center);
+    height: 100vh;
+    width: 100%;
+    padding: 8vh;
+    background-color: $third-color;
+    color: #fff;
+
+    .aside{
+        background-color: transparent;
+        height: 100%;
+        border-radius: 5px;
+        position: relative;
+        bottom: -3vh;
+    }
+
+    .text{
+        @include flexBox(column, space-evenly, flex-start);
+        width: 40%;
+        height: 65%;
+
+        h1{
+            font-weight: 800;
+        }
+    }
+
+    form{
+        @include flexBox(row, flex-start, flex-start);
+        flex-wrap: wrap;
+        background-color: $full-color !important;
+        width: 40%;
+        color: $text-color;
+        padding: 20px;
+
+        label{
+
+            input{
+                @include flexBox(column, center, center);
+            }
+
+            input, select{
+                padding-left: 10px;
+                font-size: 1.5rem;
+                background-color: transparent;
+                height: 45px;
+                border-radius: 8px;
+                border: 1px solid rgb(113, 113, 113);
+                position: relative;
+                margin-top: 5px;
+    
+                &:focus{
+                    outline: 1px solid rgb(69, 69, 69);
+                }
+    
+                &::placeholder{
+                    font-size: 1.5rem;
+                }
+    
+                &:nth-child(5), &:nth-child(4){
+                    width: 100%;
+                }
+            }
+        }
+
+        
+        label{
+            @include flexBox(column, space-between, flex-start);
+            color: $third-color;
+
+            &:nth-child(1) input{
+                width: 100%;
+                min-width: 520px;
+            }
+
+            &:nth-child(3) input{
+                width: 100%;
+                min-width: 250px;
+            }
+
+            &:nth-child(3){
+                margin-right: 18px;
+            }
+
+            &:nth-child(4) input{
+                width: 100%;
+                min-width: 250px;
+            }
+
+            &:nth-child(5) select{
+                width: 100%;
+                min-width: 250px;
+            }
+
+            &:nth-child(5){
+                margin-right: 18px;
+            }
+
+            &:nth-child(6) select{
+                width: 100%;
+                min-width: 250px;
+            }
+
+            &:nth-child(7) input{
+                width: 100%;
+                min-width: 520px;
+            }
+
+            &:nth-child(7){
+                margin-right: 18px;
+            }
+
+            &:nth-child(8) input{
+                width: 100%;
+                min-width: 380px;
+            }
+
+            &:nth-child(8){
+                margin-right: 18px;
+            }
+
+            &:nth-child(9) input{
+                width: 120px;
+            }
+
+            &:nth-child(10) input{
+                width: 100%;
+                min-width: 520px;
+            }
+
+            &:nth-child(10){
+                margin-right: 18px;
+            }
+
+            &:nth-child(11) input{
+                width: 100%;
+                min-width: 250px;
+            }
+
+            &:nth-child(11){
+                margin-right: 18px;
+            }
+
+            &:nth-child(12) input{
+                width: 100%;
+                min-width: 250px;
+            }
+        }
+        
+        p{
+            @include flexBox(row, center, center);
+            font-size: 1.3rem;
+            color: $third-color;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            cursor: default;
+            
+            span{
+                color: $primary-color;
+            }
+        }
+
+        Button{
+            font-weight: 500;
+        }
+    }
+}

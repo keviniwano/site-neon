@@ -1,0 +1,154 @@
+#Anuncio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 8vh;
+  background-color: #1E1E1E;
+  color: #fff;
+}
+#Anuncio .aside {
+  background-color: transparent;
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  bottom: -3vh;
+}
+#Anuncio .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 40%;
+  height: 65%;
+}
+#Anuncio .text h1 {
+  font-weight: 800;
+}
+#Anuncio form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #f8f8f9 !important;
+  width: 40%;
+  color: rgb(131, 131, 131);
+  padding: 20px;
+}
+#Anuncio form label input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#Anuncio form label input, #Anuncio form label select {
+  padding-left: 10px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid rgb(113, 113, 113);
+  position: relative;
+  margin-top: 5px;
+}
+#Anuncio form label input:focus, #Anuncio form label select:focus {
+  outline: 1px solid rgb(69, 69, 69);
+}
+#Anuncio form label input::-moz-placeholder, #Anuncio form label select::-moz-placeholder {
+  font-size: 1.5rem;
+}
+#Anuncio form label input::placeholder, #Anuncio form label select::placeholder {
+  font-size: 1.5rem;
+}
+#Anuncio form label input:nth-child(5), #Anuncio form label input:nth-child(4), #Anuncio form label select:nth-child(5), #Anuncio form label select:nth-child(4) {
+  width: 100%;
+}
+#Anuncio form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #1E1E1E;
+}
+#Anuncio form label:nth-child(1) input {
+  width: 100%;
+  min-width: 520px;
+}
+#Anuncio form label:nth-child(3) input {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form label:nth-child(3) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(4) input {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form label:nth-child(5) select {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form label:nth-child(5) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(6) select {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form label:nth-child(7) input {
+  width: 100%;
+  min-width: 520px;
+}
+#Anuncio form label:nth-child(7) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(8) input {
+  width: 100%;
+  min-width: 380px;
+}
+#Anuncio form label:nth-child(8) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(9) input {
+  width: 120px;
+}
+#Anuncio form label:nth-child(10) input {
+  width: 100%;
+  min-width: 520px;
+}
+#Anuncio form label:nth-child(10) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(11) input {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form label:nth-child(11) {
+  margin-right: 18px;
+}
+#Anuncio form label:nth-child(12) input {
+  width: 100%;
+  min-width: 250px;
+}
+#Anuncio form p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #1E1E1E;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: default;
+}
+#Anuncio form p span {
+  color: #009C52;
+}
+#Anuncio form Button {
+  font-weight: 500;
+}/*# sourceMappingURL=anuncio.css.map */

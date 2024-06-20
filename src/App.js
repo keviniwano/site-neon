@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './contexts/auth.js';
 import Header from './components/Header';
 import WhatsApp from './components/WhatsApp'
+import Footer from './components/Footer'
 
 export default function App() {
   
@@ -23,12 +24,13 @@ function AppContent(){
   const [showHeader, setShowHeader] = useState()
 
   useEffect(()=>{
-    if(location.pathname !== '/signin' && location.pathname !== '/signup'){
+    let path =location.pathname.toLowerCase()
+    if(path !== '/signin' && path !== '/signup'){
       setShowHeader(true)
     }else{
       setShowHeader(false)
     }
-  }, [location])
+  }, [setShowHeader, location])
 
   return(
     <>
@@ -36,6 +38,7 @@ function AppContent(){
       <ToastContainer autoClose={2500} />
       {showHeader && <WhatsApp/>}
       <RoutesApp />
+      {showHeader && <Footer/>}
     </>
   )
 }
