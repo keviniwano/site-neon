@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom' 
 import '../../assets/sass/signup.css'
+import { FcGoogle } from "react-icons/fc";
 import Button from '../../components/Button'
 import { AuthContext } from '../../contexts/auth';
 import logo from  '../../assets/images/logo.png';
@@ -10,7 +11,7 @@ export default function SignIn(){
     const [password, setPassword] = useState('');
     const [buttonControl, setButtonControl] = useState(true);
 
-    const { signIn, loadingAuth, setLoadingAuth, setEmailauth } = useContext(AuthContext);
+    const { signIn, loadingAuth, setLoadingAuth, setEmailauth, signUpGoogle } = useContext(AuthContext);
 
     async function handleLogin(e){
         e.preventDefault();
@@ -66,11 +67,16 @@ export default function SignIn(){
                     <input type="password" placeholder="Senha" id='password' onChange={
                         (e)=>{ setPassword(e.target.value)}
                     } required/>
-                    <Link to='/forgotpassword' className='forgot-password-link'>esqueci a senha</Link>
+                    <Link to='/forgotpassword' className='forgot-password-link'>Esqueci a senha</Link>
                     <Button
                         text={loadingAuth ? <div className="loader"></div> : 'Entrar'}
                         buttonDisabled={buttonControl}
                         buttonType='submit'
+                    />
+                    <Button
+                        text={<div><FcGoogle size={30}/> Entrar com Google</div>}
+                        buttonType='button'
+                        onClick={signUpGoogle}
                     />
                     <div className='react-link-text'> Ainda não é um membro? <Link to='/signUp' className='register-link'>Registre-se</Link> </div>
                 </form>

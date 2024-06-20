@@ -35,9 +35,9 @@ export default function Header(){
                     </Link>
                 </li>
                 <li>
-                    <Link to='/sobre' className='link'>
+                    <a href='#sobre' className='link'>
                         Sobre
-                    </Link>
+                    </a>
                 </li>
                 <li>
                     <Link to='/contato' className='link'>
@@ -48,7 +48,7 @@ export default function Header(){
                 {
                     signed &&
                     <li>
-                        <Link to='/' className='link' onClick={()=>logOut(false)}>
+                        <Link to='/signin' className='link' onClick={()=>logOut(false)}>
                             Sair
                         </Link>
                     </li>

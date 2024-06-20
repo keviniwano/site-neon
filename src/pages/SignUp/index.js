@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom' 
 import '../../assets/sass/signup.css'
 import Button from '../../components/Button'
+import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../contexts/auth';
 
 import logo from  '../../assets/images/logo.png';
@@ -13,7 +14,7 @@ export default function SignUp(){
     const [password, setPassword] = useState('');
     const [buttonControl, setButtonControl] = useState(true);
 
-    const { signUp, loadingAuth, setLoadingAuth } = useContext(AuthContext)
+    const { signUp, loadingAuth, setLoadingAuth, signUpGoogle } = useContext(AuthContext)
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -94,6 +95,11 @@ export default function SignUp(){
                         text={loadingAuth ? <div className="loader"></div> : 'Cadastrar'}
                         buttonDisabled={buttonControl}
                         buttonType='submit'
+                    />
+                    <Button
+                        text={<div><FcGoogle size={35}/> Entrar com Google</div>}
+                        buttonType='button'
+                        onClick={signUpGoogle}
                     />
                     <span className='sign-message-content'>Você poderá alterar seu nome no seu perfil depois</span>
                     <div className='react-link-text'> Já é um membro? <Link to='/signIn' className='register-link'>Login</Link> </div>

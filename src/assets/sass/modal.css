@@ -1,0 +1,62 @@
+@font-face {
+  font-family: AirbnbCereal_W_Bd;
+  src: url(../fonts/AirbnbCereal_W_Bd.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Bk;
+  src: url(../fonts/AirbnbCereal_W_Bk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Blk;
+  src: url(../fonts/AirbnbCereal_W_Blk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Lt;
+  src: url(../fonts/AirbnbCereal_W_Lt.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Md;
+  src: url(../fonts/AirbnbCereal_W_Md.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_XBd;
+  src: url(../fonts/AirbnbCereal_W_XBd.otf);
+}
+#modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh !important;
+  width: 110% !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  background-color: rgba(0, 22, 12, 0.5176470588) !important;
+  padding-top: 2% !important;
+  z-index: 50 !important;
+  color: #1E1E1E !important;
+}
+#modal #dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50% !important;
+  height: 45vh !important;
+  margin: -10% 0 0 -5% !important;
+  background-color: #009C52 !important;
+  border-radius: 10px !important;
+  box-shadow: 5px 5px 10px #1E1E1E !important;
+  z-index: 60 !important;
+}
+#modal img {
+  width: 16% !important;
+  font-size: 1.6rem !important;
+}
+#modal h1 {
+  font-size: 5rem !important;
+}
+#modal p {
+  font-size: 1.6rem !important;
+}/*# sourceMappingURL=modal.css.map */

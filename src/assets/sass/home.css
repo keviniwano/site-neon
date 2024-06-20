@@ -24,8 +24,8 @@
   height: 45vh;
   color: rgb(255, 255, 255);
   padding: 30px;
-  -webkit-backdrop-filter: brightness(35%);
-          backdrop-filter: brightness(35%);
+  -webkit-backdrop-filter: brightness(50%);
+          backdrop-filter: brightness(50%);
   font-weight: 500;
 }
 #Home .banner .content .tittle {
@@ -79,6 +79,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
+  height: 50vh;
   padding: 30px 80px 0 80px;
 }
 #Home .content-cards h1 {
@@ -104,7 +105,6 @@
   padding-top: 30px;
   background-color: #1E1E1E;
   color: rgb(255, 255, 255);
-  height: 100%;
 }
 #Home .content-cards .cards .container {
   display: flex;
@@ -114,6 +114,7 @@
   width: 100%;
   height: 100%;
   padding-right: 5%;
+  margin-bottom: 30px !important;
 }
 #Home .content-cards .cards .container .card {
   display: flex;
@@ -127,9 +128,6 @@
 }
 #Home .message-container {
   padding-bottom: 37px;
-}
-#Home .card-container {
-  height: 45vh !important;
 }
 #Home .divisor {
   display: flex;
@@ -150,6 +148,7 @@
   width: 100%;
   height: 100vh;
   background: url("../images/casa-1.jpg") #1E1E1E;
+  background-repeat: no-repeat !important;
   background-size: cover !important;
   flex-wrap: nowrap;
   transition: all 0.2s ease-in-out !important;
@@ -217,21 +216,211 @@
 }
 #Home #Trabalhos.b1 {
   background: url("../images/casa-1.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 #Home #Trabalhos.b2 {
   background: url("../images/casa-2.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 #Home #Trabalhos.b3 {
   background: url("../images/casa-3.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 #Home #Trabalhos.b4 {
   background: url("../images/casa-4.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 #Home #Trabalhos.b5 {
   background: url("../images/casa-5.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 #Home #Trabalhos.b6 {
   background: url("../images/casa-6.jpg") #1E1E1E !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+#Home #Contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start flex-start;
+  align-items: center;
+  margin-top: 1px;
+  width: 100% !important;
+  height: 70vh !important;
+  flex-wrap: nowrap;
+  padding: 0 3% 0 3%;
+  color: transparent;
+  /*title contact*/
+  /*form*/
+}
+#Home #Contact div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 106.4%;
+  height: 11vh;
+  background-color: #1E1E1E;
+  padding: 0 3%;
+  color: #fff !important;
+}
+#Home #Contact div h3 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 5vh;
+  font-size: 2rem;
+}
+#Home #Contact div h2 {
+  margin-right: 0.468%;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+#Home #Contact #formulario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+#Home #Contact form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+#Home #Contact .input-section {
+  width: 50%;
+}
+#Home #Contact .input-section-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start flex-start;
+  align-items: center;
+}
+#Home #Contact .input-section-right label {
+  margin-left: 10%;
+  align-self: flex-start;
+}
+#Home #Contact .input-section label {
+  display: block;
+  font-size: 1.5rem;
+  padding-bottom: 1.3%;
+  font-weight: 600;
+  color: #000 !important;
+}
+#Home #Contact input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: -2px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  height: 50px;
+  width: 80%;
+  border-radius: 15px;
+  border: 1px solid rgb(113, 113, 113);
+}
+#Home #Contact input:focus {
+  outline: 1px solid #009C52;
+}
+#Home #Contact input::-moz-placeholder {
+  font-size: 1.5rem;
+}
+#Home #Contact input::placeholder {
+  font-size: 1.5rem;
+}
+#Home #Contact .input-section-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 20vh;
+}
+#Home #Contact .input-section-message textarea {
+  width: 95% !important;
+  height: 100%;
+  margin-bottom: 30px;
+}
+#Home #Contact Button {
+  width: 95.4%;
+}
+#Home #Contact #message {
+  width: 100.2%;
+  height: 100%;
+  padding: 0.5%;
+  resize: none;
+  background-color: aliceblue;
+}
+#Home #Rodape {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  background-color: #1E1E1E;
+  color: #fff;
+  padding: 80px;
+}
+#Home #Rodape .footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+}
+#Home #Rodape .footer-icons svg:hover {
+  color: #009C52 !important;
+}
+#Home #Rodape .footer-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#Home #Rodape .footer-text .footer-text-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  margin-top: 50px;
+}
+#Home #Rodape .footer-text .footer-text-component ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding-left: 35%;
+}
+#Home #Rodape .footer-text .footer-text-component ul li a {
+  color: #fff !important;
+}
+#Home #Rodape .footer-text .footer-text-component ul li a:hover {
+  color: #009C52 !important;
 }
 
 @media screen and (max-width: 750px) {
@@ -245,5 +434,40 @@
   #Trabalhos .work:hover {
     width: 100%;
     height: 200%;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #Contact section h3 {
+    font-size: 2rem;
+  }
+  #Contact section h2 {
+    letter-spacing: 2px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .tittle-contact h2 {
+    height: 100%;
+    padding-top: 4%;
+  }
+  #form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-section {
+    width: 85%;
+  }
+  .input-section-right label {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  .input-section input {
+    width: 100%;
+    height: 38%;
+  }
+}
+@media screen and (max-width: 671px) {
+  #Contact button {
+    width: 55%;
   }
 }/*# sourceMappingURL=home.css.map */

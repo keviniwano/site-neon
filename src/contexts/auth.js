@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, createContext } from "react";
 import { auth, db } from '../services/firebaseConnection';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';;
+import { toast } from 'react-toastify';
 
 export const AuthContext = createContext({});
 
@@ -13,6 +13,7 @@ export default function AuthProvider({ children , ...rest }){
     const [loadingAuth, setLoadingAuth] = useState(false)
     const [loading, setLoading] = useState(true); // new state to handle the initial loading
     const [emailauth, setEmailauth] = useState('')
+    const provider = new GoogleAuthProvider()
 
     async function signIn(email, password){
         setLoadingAuth(true)
@@ -99,6 +100,47 @@ export default function AuthProvider({ children , ...rest }){
         })
     }
 
+    async function signUpGoogle(){
+
+        await signInWithPopup(auth, provider)
+        .then( async (value) => {
+
+            const credential = GoogleAuthProvider.credentialFromResult(value);
+            const token = credential.accessToken;
+            let [nome, sobrenome] = value.user.displayName.split(' ');
+
+            setLoadingAuth(true)
+
+            let uid = value.user.uid
+            await setDoc(doc(db, 'users', uid), {
+                name: nome,
+                sobrenome: sobrenome,
+                avatarUrl: value.user.photoURL,
+                admin: false,
+            })
+            .then( () => {
+                let data = {
+                    uid: uid,
+                    name: nome,
+                    sobrenome: sobrenome,
+                    email: value.user.email,
+                    avatarUrl: value.user.photoURL,
+                }
+
+                setLoadingAuth(false)
+                storageUser(data)
+                navigate('/')
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        })
+        .catch((error)=>{
+            toast.error('Something went wrong, try again later')
+            setLoadingAuth(false)
+        })
+    }
+
     async function EsqueciSenha (email) {
         setLoadingAuth(true)
         await sendPasswordResetEmail(auth, email)
@@ -169,12 +211,14 @@ export default function AuthProvider({ children , ...rest }){
             user,
             signIn,
             signUp,
+            signUpGoogle,
             loadingAuth,
             setLoadingAuth,
             logOut,
             emailauth,
             setEmailauth,
-            EsqueciSenha
+            EsqueciSenha,
+            provider
         }}
         >   
             {!loading && children}

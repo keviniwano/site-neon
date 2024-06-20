@@ -1,10 +1,10 @@
 @import '_mixin.scss';
 @import '_colors.scss';
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import '_fonts.scss';
 
 #SignUp, #SignIn{
     @include flexBox(column, center, center);
-    font-family: Roboto;
+    font-family: AirbnbCereal_W_Bk;
     width: 100%;
     height: 100vh;
     font-size: 1.6rem;
@@ -97,6 +97,25 @@
                 color: $primary-color;
                 font-weight: 500;
             }
+
+            Button:nth-child(7){
+                svg{
+                    height: 35px !important;
+                    margin-bottom: -12px;
+                    clip-path: circle(50%);
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover{
+                    color: $third-color;
+                    font-size: 1.76rem;
+
+                    svg{
+                        filter: brightness(75%);
+                    }
+                }
+            }
+
         }
     }
 }

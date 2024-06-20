@@ -1,4 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@font-face {
+  font-family: AirbnbCereal_W_Bd;
+  src: url(../fonts/AirbnbCereal_W_Bd.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Bk;
+  src: url(../fonts/AirbnbCereal_W_Bk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Blk;
+  src: url(../fonts/AirbnbCereal_W_Blk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Lt;
+  src: url(../fonts/AirbnbCereal_W_Lt.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Md;
+  src: url(../fonts/AirbnbCereal_W_Md.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_XBd;
+  src: url(../fonts/AirbnbCereal_W_XBd.otf);
+}
 .genericbutton {
   display: flex;
   flex-direction: column;
