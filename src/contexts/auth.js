@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, createContext } from "react";
 import { auth, db } from '../services/firebaseConnection';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { doc, getDoc, setDoc,updateDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc,updateDoc, collection, getDocs, query } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -218,6 +218,7 @@ export default function AuthProvider({ children , ...rest }){
         }
 
         await setDoc(doc(db, 'property', propertyUid), {
+            imovelUid: propertyUid,
             usuario: uid,
             nome,
             telefone,
@@ -254,10 +255,29 @@ export default function AuthProvider({ children , ...rest }){
             toast.success(`Imóvel cadastrado com sucesso!`);
             navigate(`/imoveis`);
         } catch (error) {
-            console.error('Erro ao cadastrar imóvel:', error);
+            console.error('Erro ao cadastrar imóvel:', error.message);
+            if(error.message.includes('1,048,576 bytes')){
+                toast.error(`Imagens muito grandes! Tamanho máximo: 1Mb`);
+            }
         }
     
         setLoadingAuth(false);
+    }
+    
+    async function getAllProperties() {
+        try {
+            const propertyCollection = collection(db, 'property');
+            const snapshot = await getDocs(propertyCollection);
+            const properties = [];
+    
+            snapshot.forEach(doc => {
+                properties.push(doc.data());
+            });
+            return properties; // [{...}, {...}, ...]
+        } catch (error) {
+            console.error("Error getting properties: ", error);
+            throw error;
+        }
     }
 
     return(
@@ -276,6 +296,7 @@ export default function AuthProvider({ children , ...rest }){
             EsqueciSenha,
             RegisterProperty,
             addFotos,
+            getAllProperties,
         }}
         >   
             {!loading && children}

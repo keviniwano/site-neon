@@ -166,7 +166,7 @@ export default function Anuncio() {
                         <option value="15">Studios</option> 
                         <option value="16">Terreno</option> 
                         <option value="17">Terreno em Condomínio</option> 
-                        <option value="118">Outros</option> 
+                        <option value="18">Outros</option> 
                     </select>
                 </label>
                 <label htmlFor="valor">Valor:

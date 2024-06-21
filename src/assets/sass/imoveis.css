@@ -1,33 +1,74 @@
-@font-face {
-  font-family: AirbnbCereal_W_Bd;
-  src: url(../fonts/AirbnbCereal_W_Bd.otf);
-}
-@font-face {
-  font-family: AirbnbCereal_W_Bk;
-  src: url(../fonts/AirbnbCereal_W_Bk.otf);
-}
-@font-face {
-  font-family: AirbnbCereal_W_Blk;
-  src: url(../fonts/AirbnbCereal_W_Blk.otf);
-}
-@font-face {
-  font-family: AirbnbCereal_W_Lt;
-  src: url(../fonts/AirbnbCereal_W_Lt.otf);
-}
-@font-face {
-  font-family: AirbnbCereal_W_Md;
-  src: url(../fonts/AirbnbCereal_W_Md.otf);
-}
-@font-face {
-  font-family: AirbnbCereal_W_XBd;
-  src: url(../fonts/AirbnbCereal_W_XBd.otf);
-}
 #Imoveis {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   width: 100%;
-  height: 100vh;
-  margin-top: 10vh;
+  min-height: 100vh;
+  padding: 10vh 80px 0 80px;
+}
+#Imoveis h1 {
+  margin-bottom: 4vh;
+}
+#Imoveis .imoveis-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#Imoveis .imoveis-container .imoveis {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 350px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  border: 1px solid rgb(131, 131, 131);
+  height: 450px;
+  padding-bottom: 5%;
+}
+#Imoveis .imoveis-container .imoveis .image-property {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  cursor: pointer;
+}
+#Imoveis .imoveis-container .imoveis span {
+  padding: 0 10px;
+  cursor: pointer;
+}
+#Imoveis .imoveis-container .imoveis span:nth-child(2) {
+  font-weight: bolder;
+}
+#Imoveis .imoveis-container .imoveis span:nth-child(3) {
+  color: rgb(131, 131, 131);
+}
+#Imoveis .imoveis-container .imoveis div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18%;
+  border-top: 1px solid rgb(131, 131, 131);
+  width: 100%;
+}
+#Imoveis .imoveis-container .imoveis div span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 1.5%;
+}
+#Imoveis .imoveis-container .imoveis div span:nth-child(1) {
+  color: #009C52;
+}
+#Imoveis .imoveis-container .imoveis div span:nth-child(2) {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=imoveis.css.map */
