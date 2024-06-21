@@ -35,12 +35,12 @@ export default function Header(){
                     </Link>
                 </li>
                 <li>
-                    <a href='#sobre' className='link'>
+                    <a href='http://localhost:3000/#sobre' className='link'>
                         Sobre
                     </a>
                 </li>
                 <li>
-                    <a href='/#contato' className='link'>
+                    <a href='http://localhost:3000/#contato' className='link'>
                         Fale Conosco
                     </a>
                 </li>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, createContext } from "react";
 import { auth, db } from '../services/firebaseConnection';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc,updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -234,12 +234,30 @@ export default function AuthProvider({ children , ...rest }){
         })
         .then( () => {
             setLoadingAuth(false)
-            toast.success(`Imóvel cadastrado com sucesso!`);
-            navigate('/')
+            toast.info(`Agora selecione algumas fotos!`);
+            navigate(`/anuncio/${propertyUid}`)
         })
         .catch((error)=>{
             console.log(error)
         })
+    }
+
+    async function addFotos(fotos, uid) {
+        setLoadingAuth(true);
+    
+        try {
+            const propertyRef = doc(db, 'property', uid);
+            await updateDoc(propertyRef, {
+                fotos: [...fotos],
+            });
+            
+            toast.success(`Imóvel cadastrado com sucesso!`);
+            navigate(`/imoveis`);
+        } catch (error) {
+            console.error('Erro ao cadastrar imóvel:', error);
+        }
+    
+        setLoadingAuth(false);
     }
 
     return(
@@ -257,6 +275,7 @@ export default function AuthProvider({ children , ...rest }){
             setEmailauth,
             EsqueciSenha,
             RegisterProperty,
+            addFotos,
         }}
         >   
             {!loading && children}
