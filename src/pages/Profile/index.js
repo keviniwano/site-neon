@@ -85,11 +85,21 @@ export default function Imoveis(){
         }
         return str.slice(-5);
     }
+
+    function count(){
+        let n = 0;
+        imoveis.map((imovel) => {
+            if(user.uid === imovel.usuario) {
+                n++
+            }
+        })
+        return n;
+    }
     
     return (
         <div id="Imoveis">
             <h1>
-                Você cadastrou {imoveis.length} imóveis
+                Você cadastrou {count()} imóveis
             </h1>
             <div className="imoveis-container">
                 {imoveis.map((imovel) => {

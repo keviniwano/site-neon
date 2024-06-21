@@ -65,7 +65,7 @@
     }
 
     form{
-        @include flexBox(column, space-between, center);
+        @include flexBox(column, space-between, flex-start);
         width: 45%;
         padding: 10px 10px;
         height: 95% !important;
@@ -74,15 +74,15 @@
         .images-container{
             @include flexBox(row, space-between, flex-start);
             -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-            width: 100%;
+            flex-wrap: wrap;
+            width: auto !important;
 
             img{
                 width: 140px;
                 height: 140px;
                 -o-object-fit: cover;
                    object-fit: cover;
-                margin: 15px 0px 0 0;
+                margin: 15px 15px 0 0;
             }
         }
 
