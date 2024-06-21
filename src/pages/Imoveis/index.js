@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import "../../assets/sass/imoveis.css";
 import Button from '../../components/Button'
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/auth';
 import { toast } from 'react-toastify';
 
 export default function Imoveis(){
     const [imoveis, setImoveis] = useState([])
-    const navigate = useNavigate()
     const { getAllProperties } = useContext(AuthContext);
 
     async function getProperties() {

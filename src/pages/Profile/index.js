@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import "../../assets/sass/imoveis.css";
 import Button from '../../components/Button'
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/auth';
 import { toast } from 'react-toastify';
 
 export default function Imoveis(){
     const [imoveis, setImoveis] = useState([])
-    const navigate = useNavigate()
     const { getAllProperties, user } = useContext(AuthContext);
 
     async function getProperties() {
@@ -16,6 +14,19 @@ export default function Imoveis(){
             setImoveis(properties);
         } catch (error) {
             toast.error("Erro ao recuperar imóveis: ");
+        }
+    }
+
+    function Finalidade(valor) {
+        switch (valor) {
+            case 0:
+                return "Selecione o finalidade";
+            case 1:
+                return "Venda";
+            case 2:
+                return "Alugar";
+            default:
+                return "Tipo inválido";
         }
     }
 
@@ -87,7 +98,11 @@ export default function Imoveis(){
                         <div key={imovel.imovelUid} className='imoveis'>
                             <img className='image-property' src={imovel.fotos[0]} alt={imovel.nome} />
                             <span>{imovel.bairro} | {imovel.cidade}</span>
-                            <span>{Tipo(parseInt(imovel.tipo))} à venda no {imovel.bairro}</span>
+                            <span>{Tipo(parseInt(imovel.tipo))} {
+                                imovel.finalidade === '1' ? 
+                                ' à venda ' + Finalidade(parseInt(imovel.finalidade )) : 
+                                ' para alugar ' + Finalidade(parseInt(imovel.finalidade))
+                            } no {imovel.bairro}</span>
                             <Button 
                             text={'Ver detalhes'}
                             />

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, createContext } from "react";
 import { auth, db } from '../services/firebaseConnection';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { doc, getDoc, setDoc,updateDoc, collection, getDocs, query } from 'firebase/firestore';
+import { doc, getDoc, setDoc,updateDoc, collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -105,8 +105,6 @@ export default function AuthProvider({ children , ...rest }){
         await signInWithPopup(auth, provider)
         .then( async (value) => {
 
-            const credential = GoogleAuthProvider.credentialFromResult(value);
-            const token = credential.accessToken;
             let [nome, sobrenome] = value.user.displayName.split(' ');
 
             setLoadingAuth(true)
