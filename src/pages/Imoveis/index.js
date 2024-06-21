@@ -86,6 +86,9 @@ export default function Imoveis(){
                             <img className='image-property' src={imovel.fotos[0]} alt={imovel.nome} />
                             <span>{imovel.bairro} | {imovel.cidade}</span>
                             <span>{Tipo(parseInt(imovel.tipo))} à venda no {imovel.bairro}</span>
+                            <Button 
+                                text={'Ver detalhes'}
+                            />
                             <div><span>{imovel.valor}</span><span>Código: {getLastFiveDigits(imovel.imovelUid)}</span></div>
                         </div>
                 ))}

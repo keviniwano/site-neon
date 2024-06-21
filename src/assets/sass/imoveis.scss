@@ -22,8 +22,8 @@
             margin-bottom: 25px;
             border-radius: 15px;
             border: 1px solid $text-color;
-            height: 450px;
-            padding-bottom: 5%;
+            padding-bottom: 1%;
+            cursor:pointer;
             
             .image-property{
                 width: 100%;
@@ -31,13 +31,17 @@
                 object-fit: cover;
                 border-top-right-radius: 15px;
                 border-top-left-radius: 15px;
-                cursor:pointer;
+                margin-bottom: 10px;
+            }
 
+            Button{
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 25px;
             }
 
             span{
                 padding: 0 10px;
-                cursor:pointer;
             }
 
             span:nth-child(2){
@@ -50,7 +54,7 @@
 
             div{
                 @include flexBox(row, space-between, center);
-                margin-top: 18%;
+                margin-top: 7%;
                 border-top: 1px solid $text-color;
                 width: 100%;
 

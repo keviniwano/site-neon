@@ -27,8 +27,8 @@
   margin-bottom: 25px;
   border-radius: 15px;
   border: 1px solid rgb(131, 131, 131);
-  height: 450px;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
+  cursor: pointer;
 }
 #Imoveis .imoveis-container .imoveis .image-property {
   width: 100%;
@@ -37,11 +37,15 @@
      object-fit: cover;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  cursor: pointer;
+  margin-bottom: 10px;
+}
+#Imoveis .imoveis-container .imoveis Button {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 25px;
 }
 #Imoveis .imoveis-container .imoveis span {
   padding: 0 10px;
-  cursor: pointer;
 }
 #Imoveis .imoveis-container .imoveis span:nth-child(2) {
   font-weight: bolder;
@@ -54,7 +58,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 18%;
+  margin-top: 7%;
   border-top: 1px solid rgb(131, 131, 131);
   width: 100%;
 }
