@@ -7,6 +7,7 @@ import Error from '../pages/Error-404'
 import Anuncio from '../pages/Anunciar'
 import Fotos from '../pages/Fotos'
 import Imoveis from '../pages/Imoveis'
+import Profile from '../pages/Profile'
 import Private from './Private'
 
 export default function RoutesApp(){
@@ -19,6 +20,7 @@ export default function RoutesApp(){
             <Route path="/anuncio" element={<Private> <Anuncio /> </Private>} />
             <Route path="/anuncio/:uid" element={<Private> <Fotos /> </Private>} />
             <Route path="/imoveis" element={ <Imoveis /> } />
+            <Route path="/profile" element={<Private>  <Profile /> </Private>} />
             <Route path='*' element={ <Error/> }/>
         </Routes>
     )

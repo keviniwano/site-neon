@@ -18,7 +18,8 @@
         height: 600px;
         background-color: #ffffff;
         border-radius: 25px;
-        box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 12px 0px, rgba(0, 0, 0, 0.05) 0px 24px 32px 0px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 12px 0px, rgba(0, 0, 0, 0.05) 0px 24px 32px 0px;
+                box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 12px 0px, rgba(0, 0, 0, 0.05) 0px 24px 32px 0px;
         padding: 0 40px;
 
         img{
@@ -53,6 +54,22 @@
 
                 &:focus{
                     outline: 1px solid rgb(69, 69, 69);
+                }
+
+                &::-webkit-input-placeholder{
+                    font-size: 1.5rem;
+                }
+
+                &::-moz-placeholder{
+                    font-size: 1.5rem;
+                }
+
+                &:-ms-input-placeholder{
+                    font-size: 1.5rem;
+                }
+
+                &::-ms-input-placeholder{
+                    font-size: 1.5rem;
                 }
 
                 &::placeholder{
@@ -102,7 +119,10 @@
                 svg{
                     height: 35px !important;
                     margin-bottom: -12px;
-                    clip-path: circle(50%);
+                    -webkit-clip-path: circle(50%);
+                            clip-path: circle(50%);
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
                     transition: all 0.2s ease-in-out;
                 }
 
@@ -111,7 +131,8 @@
                     font-size: 1.76rem;
 
                     svg{
-                        filter: brightness(75%);
+                        -webkit-filter: brightness(75%);
+                                filter: brightness(75%);
                     }
                 }
             }

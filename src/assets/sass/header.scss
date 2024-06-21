@@ -8,22 +8,26 @@
     position: fixed;
     top: 0;
     padding: 0 5%;
-    box-shadow: 0 -7px 20px $text-color;
+    -webkit-box-shadow: 0 -7px 20px $text-color;
+            box-shadow: 0 -7px 20px $text-color;
     background-color: $third-color;
     z-index: 10;
 
     img{
         width: 30px;
         height: 30px;
-        backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
+        -webkit-backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
+                backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
     }
 
     .avatar-link{
         img{
             width: 30px;
             height: 30px;
-            object-fit: cover;
-            clip-path: circle(48%);
+            -o-object-fit: cover;
+               object-fit: cover;
+            -webkit-clip-path: circle(48%);
+                    clip-path: circle(48%);
             margin-bottom: -5px;
         }
 
@@ -50,6 +54,8 @@
                 svg{
                     position: relative;
                     bottom: -8px;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
                 }
 
@@ -79,6 +85,8 @@
 
         a{
             color: #fff;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
 
             &:hover{

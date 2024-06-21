@@ -13,6 +13,10 @@ export default function Private({ children }) {
             toast.info('Primeiro faça login ou registre-se')
             navigate('/signin');
         }
+        if(!signed && location.pathname.toLocaleLowerCase().trim() === '/profile'){
+            toast.info('Primeiro faça login ou registre-se')
+            navigate('/signin');
+        }
     }, [signed, navigate, location.pathname]);
 
     return children;

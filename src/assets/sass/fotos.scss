@@ -19,7 +19,8 @@
 
     .cards{
         @include flexBox(column, center, center);
-        flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
         width: 40%;
         padding: 1%;
 
@@ -54,7 +55,8 @@
                 z-index: 3;
                 color: #fff;
                 width: 650px;
-                box-shadow: 0px 0px 15px #002b1a;
+                -webkit-box-shadow: 0px 0px 15px #002b1a;
+                        box-shadow: 0px 0px 15px #002b1a;
                 font-size: 2.5rem;
                 font-weight: 500;
             }
@@ -71,13 +73,15 @@
 
         .images-container{
             @include flexBox(row, space-between, flex-start);
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             width: 100%;
 
             img{
                 width: 140px;
                 height: 140px;
-                object-fit: cover;
+                -o-object-fit: cover;
+                   object-fit: cover;
                 margin: 15px 0px 0 0;
             }
         }
@@ -111,6 +115,8 @@
                 font-weight: 500;
                 font-size: 1.7rem;
                 color: aliceblue;
+                -webkit-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
                 transition: all 0.2s ease-in-out;
 
                 &:hover{

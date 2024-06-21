@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 export default function Imoveis(){
     const [imoveis, setImoveis] = useState([])
     const navigate = useNavigate()
-    const { getAllProperties } = useContext(AuthContext);
+    const { getAllProperties, user } = useContext(AuthContext);
 
     async function getProperties() {
         try {
@@ -67,18 +67,6 @@ export default function Imoveis(){
                 return "Tipo inválido";
         }
     }
-    function Finalidade(valor) {
-        switch (valor) {
-            case 0:
-                return "Selecione o finalidade";
-            case 1:
-                return "Venda";
-            case 2:
-                return "Alugar";
-            default:
-                return "Tipo inválido";
-        }
-    }
 
     function getLastFiveDigits(str) {
         if (str.length <= 5) {
@@ -87,28 +75,30 @@ export default function Imoveis(){
         return str.slice(-5);
     }
     
-    return(
+    return (
         <div id="Imoveis">
-            <h1> 
-                Há {imoveis.length} imóveis cadastrados
+            <h1>
+                Você cadastrou {imoveis.length} imóveis
             </h1>
             <div className="imoveis-container">
-                {imoveis.map((imovel) => (
+                {imoveis.map((imovel) => {
+                    if (user.uid === imovel.usuario) {
+                        return (
                         <div key={imovel.imovelUid} className='imoveis'>
                             <img className='image-property' src={imovel.fotos[0]} alt={imovel.nome} />
                             <span>{imovel.bairro} | {imovel.cidade}</span>
-                            <span>{Tipo(parseInt(imovel.tipo))} {
-                                imovel.finalidade === '1' ? 
-                                ' à venda ' + Finalidade(parseInt(imovel.finalidade )) : 
-                                ' para alugar ' + Finalidade(parseInt(imovel.finalidade))
-                                } no {imovel.bairro}</span>
+                            <span>{Tipo(parseInt(imovel.tipo))} à venda no {imovel.bairro}</span>
                             <Button 
-                                text={'Ver detalhes'}
+                            text={'Ver detalhes'}
                             />
                             <div><span>{imovel.valor}</span><span>Código: {getLastFiveDigits(imovel.imovelUid)}</span></div>
                         </div>
-                ))}
+                        );
+                    } else {
+                        return null; // Retorna null ou outro componente vazio caso não queira renderizar nada
+                    }
+                })}
             </div>
         </div>
-    )
+    );
 }

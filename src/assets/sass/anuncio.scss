@@ -29,7 +29,8 @@
 
     form{
         @include flexBox(row, flex-start, flex-start);
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         background-color: $full-color !important;
         width: 40%;
         color: $text-color;
@@ -53,6 +54,22 @@
     
                 &:focus{
                     outline: 1px solid rgb(69, 69, 69);
+                }
+    
+                &::-webkit-input-placeholder{
+                    font-size: 1.5rem;
+                }
+    
+                &::-moz-placeholder{
+                    font-size: 1.5rem;
+                }
+    
+                &:-ms-input-placeholder{
+                    font-size: 1.5rem;
+                }
+    
+                &::-ms-input-placeholder{
+                    font-size: 1.5rem;
                 }
     
                 &::placeholder{

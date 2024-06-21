@@ -16,15 +16,15 @@
   width: 30px;
   height: 30px;
   -webkit-backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
-          backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
+  backdrop-filter: drop-shadow(4px 4px 10px rgb(0, 0, 0));
 }
 #Menu .avatar-link img {
   width: 30px;
   height: 30px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -webkit-clip-path: circle(48%);
-          clip-path: circle(48%);
+  clip-path: circle(48%);
   margin-bottom: -5px;
 }
 #Menu .avatar-link .button-container {

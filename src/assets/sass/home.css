@@ -1,3 +1,27 @@
+@font-face {
+  font-family: AirbnbCereal_W_Bd;
+  src: url(../fonts/AirbnbCereal_W_Bd.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Bk;
+  src: url(../fonts/AirbnbCereal_W_Bk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Blk;
+  src: url(../fonts/AirbnbCereal_W_Blk.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Lt;
+  src: url(../fonts/AirbnbCereal_W_Lt.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_Md;
+  src: url(../fonts/AirbnbCereal_W_Md.otf);
+}
+@font-face {
+  font-family: AirbnbCereal_W_XBd;
+  src: url(../fonts/AirbnbCereal_W_XBd.otf);
+}
 #Home {
   display: flex;
   flex-direction: column;
@@ -26,7 +50,7 @@
   padding: 30px;
   padding-left: 80px;
   -webkit-backdrop-filter: brightness(50%);
-          backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(50%);
   font-weight: 500;
 }
 #Home .banner .content .tittle {
@@ -130,7 +154,7 @@
 #Home .message-container {
   padding-bottom: 37px;
   -webkit-backdrop-filter: brightness(50%);
-          backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(50%);
   height: 47.5vh;
 }
 #Home .divisor {
@@ -180,7 +204,7 @@
   transition: all 0.3s ease;
   border-right: 0px;
   -webkit-backdrop-filter: brightness(0.28);
-          backdrop-filter: brightness(0.28);
+  backdrop-filter: brightness(0.28);
 }
 #Home #Trabalhos .work div {
   display: flex;

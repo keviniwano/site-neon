@@ -17,6 +17,8 @@
     font-weight: 500;
     font-size: 1.7rem;
     color: aliceblue;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 
     &:hover{

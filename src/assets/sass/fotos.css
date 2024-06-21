@@ -82,7 +82,7 @@
   width: 140px;
   height: 140px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 15px 0px 0 0;
 }
 #Fotos form span {

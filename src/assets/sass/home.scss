@@ -1,4 +1,6 @@
-
+@import '_mixin.scss';
+@import '_colors.scss';
+@import '_fonts.scss';
 
 #Home{
     @include flexBox(column, space-evenly, flex-start);
@@ -21,7 +23,8 @@
             color: rgb(255, 255, 255);
             padding: 30px;
             padding-left: 80px;
-            backdrop-filter: brightness(50%); 
+            -webkit-backdrop-filter: brightness(50%);
+                    backdrop-filter: brightness(50%); 
             font-weight: 500;
             
 
@@ -131,7 +134,8 @@
 
     .message-container{
         padding-bottom: 37px;
-        backdrop-filter: brightness(50%); 
+        -webkit-backdrop-filter: brightness(50%);
+                backdrop-filter: brightness(50%); 
         height: 47.5vh;
 
     }
@@ -152,13 +156,18 @@
         background: url("../images/casa-1.jpg") $third-color;
         background-repeat: no-repeat !important;
         background-size: cover !important;
-        flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-transition: all 0.2s ease-in-out !important;
+        -o-transition: all 0.2s ease-in-out !important;
         transition: all 0.2s ease-in-out !important;
 
         .image-container{
             @include flexBox(row, center, center);
             width: 100%;
             height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
         }
 
@@ -170,9 +179,12 @@
             background-color: transparent;
             border: 1px solid #dadada;
             border-collapse: collapse;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
             border-right: 0px;
-            backdrop-filter: brightness(0.28);
+            -webkit-backdrop-filter: brightness(0.28);
+                    backdrop-filter: brightness(0.28);
 
             div{
                 @include flexBox(column, space-evenly, center);
@@ -220,6 +232,7 @@
                 background-size: cover !important;
             }
         }
+
     }
 
     #contato{
@@ -227,7 +240,8 @@
         margin-top: 1px;
         width: 100% !important;
         height: 70vh !important;
-        flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
         padding: 0 3% 0 3%;
         color: transparent;
     
@@ -264,7 +278,8 @@
             margin-top: 3vh;
             width: 100%;
             height: 100%;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             z-index: 2;
             margin-bottom: 30px;
         }
@@ -273,7 +288,8 @@
             @include flexBox(row, flex-start, center);
             width: 100%;
             height: 100%;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
         }
         
         .input-section{
@@ -286,7 +302,8 @@
         
         .input-section-right label{
             margin-left: 10%;
-            align-self: flex-start;
+            -ms-flex-item-align: start;
+                align-self: flex-start;
         }
         
         .input-section label{
@@ -310,6 +327,22 @@
 
             &:focus{
                 outline: 1px solid $primary-color;
+            }
+
+            &::-webkit-input-placeholder{
+                font-size: 1.5rem;
+            }
+
+            &::-moz-placeholder{
+                font-size: 1.5rem;
+            }
+
+            &:-ms-input-placeholder{
+                font-size: 1.5rem;
+            }
+
+            &::-ms-input-placeholder{
+                font-size: 1.5rem;
             }
 
             &::placeholder{
@@ -347,7 +380,10 @@
 
 @media screen and (max-width: 750px){
     #Trabalhos .image-container{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     #Trabalhos .work{
@@ -380,9 +416,16 @@
     }
 
     #form{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .input-section{
@@ -391,7 +434,8 @@
 
     .input-section-right label{
         margin-left: 0;
-        align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     }
     
     .input-section input{

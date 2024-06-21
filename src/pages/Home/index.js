@@ -139,7 +139,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                         />
@@ -173,7 +173,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />
@@ -188,7 +188,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />
@@ -203,7 +203,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />
@@ -222,7 +222,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />
@@ -237,7 +237,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />
@@ -252,7 +252,7 @@ export default function Home(){
                             text='Ver Detalhes'
                             onClick={
                                 () => {
-                                    window.location.href = '/anuncie'
+                                    window.location.href = '/imoveis'
                                 }
                             }
                             />

@@ -128,7 +128,7 @@
   height: 35px !important;
   margin-bottom: -12px;
   -webkit-clip-path: circle(50%);
-          clip-path: circle(50%);
+  clip-path: circle(50%);
   transition: all 0.2s ease-in-out;
 }
 #SignUp .content form Button:nth-child(7):hover, #SignIn .content form Button:nth-child(7):hover {
