@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import EsqueciSenha from '../pages/EsqueciSenha'
 import Error from '../pages/Error-404'
 import Anuncio from '../pages/Anunciar'
+import Private from './Private'
 
 export default function RoutesApp(){
     return(
@@ -13,7 +14,7 @@ export default function RoutesApp(){
             <Route path="/signin" element={ <SignIn /> } />
             <Route path="/signup" element={ <SignUp /> } />
             <Route path="/forgotpassword" element={ <EsqueciSenha /> } />
-            <Route path="/anuncio" element={ <Anuncio /> } />
+            <Route path="/anuncio" element={<Private> <Anuncio /> </Private>} />
             <Route path='*' element={ <Error/> }/>
         </Routes>
     )

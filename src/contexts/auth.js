@@ -196,13 +196,50 @@ export default function AuthProvider({ children , ...rest }){
 
 
     function storageUser(data) {
-        const expirationTime = new Date().getTime() + 1 * 24 * 60 * 60 * 1000 // 1 dia em milissegundos
+        const expirationTime = new Date().getTime() + 1 * 24 * 60 * 60 * 1000; // 1 dia em milissegundos
+        setUser(data);
         const userData = {
             ...data,
             expirationTime,
         };
         localStorage.setItem('@neoninfoPRO', JSON.stringify(userData));
-        toast.success(`Bem-vindo(a), ${data.name}!`)
+        toast.success(`Bem-vindo(a), ${data.name}!`);
+    }
+
+    async function RegisterProperty(nome, telefone, email, finalidade, tipo, valor, endereco, numero, cidade, bairro, complemento){
+
+        let uid = user.uid
+
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let propertyUid = '';
+        const charactersLength = characters.length;
+        for (let i = 0; i < 28; i++) {
+            propertyUid += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
+        await setDoc(doc(db, 'property', propertyUid), {
+            usuario: uid,
+            nome,
+            telefone,
+            email,
+            finalidade,
+            tipo,
+            valor,
+            endereco,
+            numero,
+            cidade,
+            bairro,
+            complemento,
+            fotos: [],
+        })
+        .then( () => {
+            setLoadingAuth(false)
+            toast.success(`Imóvel cadastrado com sucesso!`);
+            navigate('/')
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
     }
 
     return(
@@ -219,7 +256,7 @@ export default function AuthProvider({ children , ...rest }){
             emailauth,
             setEmailauth,
             EsqueciSenha,
-            provider
+            RegisterProperty,
         }}
         >   
             {!loading && children}

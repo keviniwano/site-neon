@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../../assets/sass/anuncio.css';
 import Button from '../../components/Button';
+import { AuthContext } from '../../contexts/auth';
 
 export default function Anuncio() {
     const [nome, setNome] = useState('');
@@ -15,9 +16,27 @@ export default function Anuncio() {
     const [bairro, setBairro] = useState('');
     const [complemento, setComplemento] = useState('');
 
+    const { RegisterProperty, setLoadingAuth } = useContext(AuthContext);
+
     function anunciarImovel(e) {
         e.preventDefault();
-        validateForm()
+        setLoadingAuth(true)
+        validateForm() && RegisterProperty(nome, telefone, email, finalidade, tipo, valor, endereco, numero, cidade, bairro, complemento)
+        setLoadingAuth(false)
+    }
+
+    function handleValorChange(e) {
+        const value = e.target.value.replace(/\D/g, ''); 
+        if (value === '') {
+            setValor('');
+        } else {
+            const formattedValue = new Intl.NumberFormat('pt-BR', {
+                style: 'decimal',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            }).format(parseFloat(value) / 100); 
+            setValor(formattedValue);
+        }
     }
 
     function validateForm() {
@@ -130,16 +149,28 @@ export default function Anuncio() {
                 <label htmlFor='tipo'>* Qual o tipo do imóvel?
                     <select id="tipo" name="tipo" onChange={(e) => setTipo(e.target.value)}>
                         <option value="0">Selecione o tipo</option>
-                        <option value="1">Residencial</option>
-                        <option value="2">Comercial</option>
-                        <option value="3">Residencial e comercial</option> 
-                        <option value="4">Industrial</option>
-                        <option value="5">Rural</option>
-                        <option value="6">Temporada</option> 
+                        <option value="1">Apartamento</option>
+                        <option value="2">Área</option>
+                        <option value="3">Casa</option> 
+                        <option value="4">Casa Comercial</option>
+                        <option value="5">Casa de Colônia</option>
+                        <option value="6">Casa em Condominio</option> 
+                        <option value="7">Chácara</option> 
+                        <option value="8">Cobertura</option> 
+                        <option value="9">Condições Especiais</option> 
+                        <option value="10">Fazenda</option> 
+                        <option value="11">Galpão</option> 
+                        <option value="12">Loja</option> 
+                        <option value="13">Prédio</option> 
+                        <option value="14">Sala</option> 
+                        <option value="15">Studios</option> 
+                        <option value="16">Terreno</option> 
+                        <option value="17">Terreno em Condomínio</option> 
+                        <option value="118">Outros</option> 
                     </select>
                 </label>
-                <label htmlFor="valor">* Valor:
-                    <input type="text" id="valor" name="valor" placeholder="Digite o valor" onChange={(e) => setValor(e.target.value)} />
+                <label htmlFor="valor">Valor:
+                    <input type="text" id="valor" name="valor" placeholder="Digite o valor" value={valor} onChange={handleValorChange} />
                 </label>
                 <label htmlFor="endereco">* Endereço:
                     <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" onChange={(e) => setEndereco(e.target.value)} />

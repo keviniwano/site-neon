@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../contexts/auth';
+import { toast } from 'react-toastify';
 
 export default function Private({ children }) {
     const navigate = useNavigate();
@@ -8,14 +9,9 @@ export default function Private({ children }) {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.pathname === '/signin') {
+        if(!signed && location.pathname.toLocaleLowerCase().trim() === '/anuncio'){
+            toast.info('Primeiro faça login ou registre-se')
             navigate('/signin');
-        } else if(location.pathname === '/signup'){
-            navigate('/signup');
-        } else {
-            if (location.pathname === '/') {
-                navigate('/');
-            }
         }
     }, [signed, navigate, location.pathname]);
 
