@@ -302,7 +302,7 @@ export default function Home(){
                 <div id="formulario">
                     <form action="https://api.staticforms.xyz/submit" method="POST" id="form">
                         <input type="hidden" name="accessKey" value="808a1fa9-0de4-4f75-b443-79d9d9889e0b"></input>
-                        <input type="hidden" name="redirectTo" value="http://localhost:3000/"></input>
+                        <input type="hidden" name="redirectTo" value="https://neonimobiliaria.netlify.app/"></input>
                         <div className="input-section">
                             <label htmlFor="name">Nome</label>
                             <input type="text" name="name" id="name" placeholder="Name" value={name}

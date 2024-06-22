@@ -107,9 +107,9 @@ export default function AuthProvider({ children , ...rest }){
 
             let [nome, sobrenome] = value.user.displayName.split(' ');
 
-            setLoadingAuth(true)
+            setLoadingAuth(true);
 
-            let uid = value.user.uid
+            let uid = value.user.uid;
             await setDoc(doc(db, 'users', uid), {
                 name: nome,
                 sobrenome: sobrenome,
@@ -125,18 +125,19 @@ export default function AuthProvider({ children , ...rest }){
                     avatarUrl: value.user.photoURL,
                 }
 
-                setLoadingAuth(false)
-                storageUser(data)
-                navigate('/')
+                setLoadingAuth(false);
+                storageUser(data);
+                navigate('/');
             })
             .catch((error)=>{
-                console.log(error)
+                console.log(error);
             })
         })
         .catch((error)=>{
-            toast.error('Something went wrong, try again later')
+            toast.error('Something went wrong, try again later');
+            console.log(error);
 
-            setLoadingAuth(false)
+            setLoadingAuth(false);
         })
     }
 

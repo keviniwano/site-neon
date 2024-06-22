@@ -35,12 +35,12 @@ export default function Header(){
                     </Link>
                 </li>
                 <li>
-                    <a href='http://localhost:3000/#sobre' className='link'>
+                    <a href='https://neonimobiliaria.netlify.app/#sobre' className='link'>
                         Sobre
                     </a>
                 </li>
                 <li>
-                    <a href='http://localhost:3000/#contato' className='link'>
+                    <a href='https://neonimobiliaria.netlify.app/#contato' className='link'>
                         Fale Conosco
                     </a>
                 </li>
