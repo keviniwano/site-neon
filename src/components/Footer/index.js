@@ -43,14 +43,14 @@ export default function Footer(){
                             </Link>
                         </li>
                         <li>
-                            <a href='#sobre' className='link'>
+                            <a href='https://neonimobiliaria.netlify.app/#sobre' className='link'>
                                 Sobre
                             </a>
                         </li>
                         <li>
-                            <Link to='/contato' className='link'>
+                            <a href='https://neonimobiliaria.netlify.app/#contato' className='link'>
                                 Fale Conosco
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>
