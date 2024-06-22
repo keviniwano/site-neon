@@ -97,8 +97,8 @@ export default function Imoveis(){
                             <span>{imovel.bairro} | {imovel.cidade}</span>
                             <span>{Tipo(parseInt(imovel.tipo))} {
                                 imovel.finalidade === '1' ? 
-                                ' à venda ' + Finalidade(parseInt(imovel.finalidade )) : 
-                                ' para alugar ' + Finalidade(parseInt(imovel.finalidade))
+                                ' à venda' : 
+                                ' para alugar'
                                 } no {imovel.bairro}</span>
                             <Button 
                                 text={'Ver detalhes'}
